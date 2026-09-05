@@ -2524,4 +2524,208 @@ body {
     }
 }
 
-/*Sziasztok en Lizu vagyok, es szivbol gyulolom a css-t*/
+#auth-screen.auth-choice-mode .auth-form-view {
+    display: none !important;
+}
+
+#auth-screen.auth-choice-mode #auth-choice-view {
+    display: block !important;
+}
+
+#auth-screen.auth-form-mode #auth-choice-view {
+    display: none !important;
+}
+
+#auth-screen.auth-form-mode .games-title,
+#auth-screen.auth-form-mode .games-subtitle {
+    display: none !important;
+}
+
+#auth-screen.auth-form-mode .auth-form-view {
+    display: block !important;
+    width: 100%;
+}
+
+#auth-screen.auth-form-mode .auth-form-header {
+    width: min(420px, 100%);
+    margin: 0 auto 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+#auth-screen .auth-back-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1.5px solid var(--accent);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#auth-screen .auth-back-btn:hover {
+    background: var(--accent);
+    color: var(--bg);
+    transform: translateY(-2px);
+}
+
+#auth-screen .auth-form-title {
+    margin: 0;
+    font-size: clamp(25px, 4vw, 32px);
+    line-height: 1.15;
+    font-weight: 700;
+    text-align: center;
+}
+
+#auth-screen.auth-form-mode .auth-page-form {
+    display: none !important;
+}
+
+#auth-screen.auth-form-mode:not(.auth-register-mode) #auth-login-form {
+    display: block !important;
+}
+
+#auth-screen.auth-register-mode #auth-login-form {
+    display: none !important;
+}
+
+#auth-screen.auth-register-mode #auth-register-form {
+    display: block !important;
+}
+
+#auth-screen .auth-page-form .auth-inputs {
+    gap: 14px;
+}
+
+#auth-screen .auth-page-form input[type="text"],
+#auth-screen .auth-page-form input[type="password"] {
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    padding: 13px 18px;
+    border: 1.5px solid var(--accent);
+    border-radius: 14px;
+    background: transparent;
+    color: var(--accent);
+    outline: none;
+}
+
+#auth-screen .auth-page-form .gender-selection {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 2px;
+}
+
+#auth-screen .auth-page-form .gender-btn {
+    min-width: 0;
+    min-height: 52px;
+    padding: 10px 8px;
+    border: 1.5px solid var(--accent);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#auth-screen .auth-page-form .field-note {
+    margin: 0;
+}
+
+#auth-screen .auth-page-form .privacy-consent-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0 0;
+}
+
+#auth-screen .auth-page-form .privacy-checkbox-label {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    text-align: left;
+    line-height: 1.4;
+}
+
+#auth-screen .auth-page-form .privacy-checkbox-label span {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+#auth-screen .auth-page-form .privacy-checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    flex: 0 0 16px;
+}
+
+#auth-screen .auth-page-form .privacy-link-btn {
+    align-self: center;
+}
+
+#auth-screen .auth-page-form .auth-submit-btn {
+    display: block;
+    width: auto !important;
+    min-width: 160px;
+    margin: 22px auto 0;
+}
+
+#auth-screen.auth-form-mode .auth-page-content {
+    justify-content: center;
+}
+
+@media (max-width: 700px) {
+    body {
+        min-height: 100dvh;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .game-container {
+        min-height: calc(100dvh - 20px);
+        height: auto;
+        margin: 0 auto;
+        padding: 26px 18px;
+    }
+
+    #auth-screen .auth-page-content {
+        padding-top: 48px;
+    }
+
+    #auth-screen.auth-form-mode .auth-form-header {
+        width: min(420px, 100%);
+    }
+
+    #auth-screen .auth-page-form .gender-selection {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    #auth-screen .auth-page-form .gender-btn {
+        padding: 8px 4px;
+        font-size: 12px;
+    }
+
+    #auth-screen .auth-page-form .privacy-checkbox-label {
+        align-items: flex-start;
+    }
+}
