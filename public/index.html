@@ -1,5 +1,6 @@
+
 <!DOCTYPE html>
-</html><html lang="hu">
+<html lang="hu">
 
 <head>
     <meta charset="UTF-8">
@@ -11,53 +12,9 @@
 <body>
     <main class="game-container">
 
-        <section id="auth-screen" class="screen active">
+        <section id="auth-screen" class="screen active auth-choice-mode">
+
             <div class="auth-page-content">
-
-                <div class="logo">
-                    <span class="logo-heart-text">♡</span>
-                </div>
-
-                <h1 class="games-title">
-                    <span data-i18n="playerProfile">
-                        JÁTÉKOS PROFIL
-                    </span>
-                </h1>
-
-                <p class="games-subtitle" data-i18n="authWelcome">
-                    Jelentkezz be a már meglévő profilodba, vagy regisztrálj a folytatáshoz.
-                </p>
-
-                <div
-                    id="auth-choice-view"
-                    class="auth-choice-view">
-
-                    <p
-                        class="auth-choice-question">
-                        Mit szeretnél csinálni?
-                    </p>
-
-                    <div class="auth-choice-buttons">
-
-                        <button
-                            id="auth-login-tab"
-                            class="primary-btn auth-choice-btn"
-                            type="button"
-                            data-i18n="login">
-                            BEJELENTKEZÉS
-                        </button>
-
-                        <button
-                            id="auth-register-tab"
-                            class="secondary-btn auth-choice-btn"
-                            type="button"
-                            data-i18n="register">
-                            REGISZTRÁCIÓ
-                        </button>
-
-                    </div>
-
-                </div>
 
                 <div class="auth-page-top-buttons">
 
@@ -66,33 +23,9 @@
                         class="icon-btn"
                         title="Beállítások"
                         aria-label="Beállítások">
-
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round">
-
-                            <path
-                                d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0
-                                2.34 2.34 0 0 0 3.319 1.915
-                                2.34 2.34 0 0 1 2.33 4.033
-                                2.34 2.34 0 0 0 0 3.831
-                                2.34 2.34 0 0 1-2.33 4.033
-                                2.34 2.34 0 0 0-3.319 1.915
-                                2.34 2.34 0 0 1-4.659 0
-                                2.34 2.34 0 0 0-3.32-1.915
-                                2.34 2.34 0 0 1-2.33-4.033
-                                2.34 2.34 0 0 0 0-3.831
-                                A2.34 2.34 0 0 1 6.35 6.051
-                                a2.34 2.34 0 0 0 3.319-1.915" />
-
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831 A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915" />
                             <circle cx="12" cy="12" r="3" />
-
                         </svg>
                     </button>
 
@@ -101,27 +34,8 @@
                         class="icon-btn"
                         title="Hibabejelentés"
                         aria-label="Hibabejelentés">
-
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round">
-
-                            <path
-                                d="M4 22V4a1 1 0 0 1 .4-.8
-                                A6 6 0 0 1 8 2c3 0 5 2
-                                7.333 2q2 0 3.067-.8
-                                A1 1 0 0 1 20 4v10
-                                a1 1 0 0 1-.4.8
-                                A6 6 0 0 1 16 16
-                                c-3 0-5-2-8-2
-                                a6 6 0 0 0-4 1.528" />
-
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 22V4a1 1 0 0 1 .4-.8A6 6 0 0 1 8 2c3 0 5 2 7.333 2q2 0 3.067-.8A1 1 0 0 1 20 4v10a1 1 0 0 1-.4.8A6 6 0 0 1 16 16c-3 0-5-2-8-2a6 6 0 0 0-4 1.528" />
                         </svg>
                     </button>
 
@@ -130,226 +44,87 @@
                         class="icon-btn"
                         title="Adatvédelmi tájékoztató"
                         aria-label="Adatvédelmi tájékoztató">
-
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round">
-
-                            <path
-                                d="M20 13c0 5-3.5 7.5-7.66 8.95
-                                a1 1 0 0 1-.67-.01
-                                C7.5 20.5 4 18 4 13V6
-                                a1 1 0 0 1 1-1
-                                c2 0 4.5-1.2 6.24-2.72
-                                a1.17 1.17 0 0 1 1.52 0
-                                C14.51 3.81 17 5 19 5
-                                a1 1 0 0 1 1 1z" />
-
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
                             <path d="M12 8v4" />
                             <path d="M12 16h.01" />
-
                         </svg>
                     </button>
 
                 </div>
 
-                <div
-                    id="auth-form-view"
-                    class="auth-form-view">
+                <div class="logo">
+                    <span class="logo-heart-text">♡</span>
+                </div>
+
+                <h1 class="games-title">
+                    <span data-i18n="playerProfile">JÁTÉKOS PROFIL</span>
+                </h1>
+
+                <p class="games-subtitle" data-i18n="authWelcome">
+                    Jelentkezz be a már meglévő profilodba, vagy regisztrálj a folytatáshoz.
+                </p>
+
+                <div id="auth-choice-view" class="auth-choice-view">
+                    <p class="auth-choice-question">Mit szeretnél csinálni?</p>
+                    <div class="auth-choice-buttons">
+                        <button id="auth-login-tab" class="primary-btn auth-choice-btn" type="button" data-i18n="login">BEJELENTKEZÉS</button>
+                        <button id="auth-register-tab" class="secondary-btn auth-choice-btn" type="button" data-i18n="register">REGISZTRÁCIÓ</button>
+                    </div>
+                </div>
+
+                <div id="auth-form-view" class="auth-form-view">
 
                     <div class="auth-form-header">
-
-                        <button
-                            id="auth-back-btn"
-                            class="auth-back-btn"
-                            type="button"
-                            aria-label="Vissza"
-                            title="Vissza">
-
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                aria-hidden="true">
-                                <path d="M19 12H5" />
-                                <path d="M12 19l-7-7 7-7" />
-                            </svg>
-
-                        </button>
-
-                        <h2
-                            id="auth-form-title"
-                            class="auth-form-title">
-                            BEJELENTKEZÉS
-                        </h2>
-
+                        <button id="auth-back-btn" class="auth-back-btn" type="button" aria-label="Vissza">←</button>
+                        <h2 id="auth-form-title" class="auth-form-title">BEJELENTKEZÉS</h2>
                     </div>
 
-                <div id="auth-login-form" class="auth-page-form">
-
-                    <div class="auth-inputs">
-
-                        <input
-                            type="text"
-                            id="auth-login-username"
-                            placeholder="Felhasználónév"
-                            maxlength="20"
-                            autocomplete="username">
-
-                        <input
-                            type="password"
-                            id="auth-login-password"
-                            placeholder="Jelszó"
-                            maxlength="128"
-                            autocomplete="current-password">
-
-                        <p
-                            id="profile-auth-error"
-                            class="error-text"
-                            role="alert">
-                        </p>
-
+                    <div id="auth-login-form" class="auth-page-form">
+                        <div class="auth-inputs">
+                            <input type="text" id="auth-login-username" placeholder="Felhasználónév" maxlength="20" autocomplete="username">
+                            <input type="password" id="auth-login-password" placeholder="Jelszó" maxlength="128" autocomplete="current-password">
+                            <p id="profile-auth-error" class="error-text" role="alert"></p>
+                        </div>
+                        <button id="auth-login-submit" class="primary-btn auth-submit-btn" type="button" data-i18n="login">BEJELENTKEZÉS</button>
                     </div>
 
-                    <button
-                        id="auth-login-submit"
-                        class="primary-btn auth-submit-btn"
-                        type="button"
-                        data-i18n="login">
-                        BEJELENTKEZÉS
-                    </button>
+                    <div id="auth-register-form" class="auth-page-form">
+                        <div class="auth-inputs">
+                            <input type="text" id="auth-register-username" placeholder="Felhasználónév" maxlength="20" autocomplete="username">
+                            <input type="password" id="auth-register-password" placeholder="Jelszó (min. 8 karakter)" maxlength="128" autocomplete="new-password">
+                            <input type="password" id="auth-register-password-confirm" placeholder="Jelszó még egyszer" maxlength="128" autocomplete="new-password">
 
-                </div>
+                            <div class="gender-selection">
+                                <label class="gender-btn">
+                                    <input type="radio" name="auth-gender" value="girl">
+                                    <span data-i18n="girl">Lány</span>
+                                </label>
+                                <label class="gender-btn">
+                                    <input type="radio" name="auth-gender" value="boy">
+                                    <span data-i18n="boy">Fiú</span>
+                                </label>
+                                <label class="gender-btn">
+                                    <input type="radio" name="auth-gender" value="" checked>
+                                    <span data-i18n="genderNone">Nem adom meg</span>
+                                </label>
+                            </div>
 
-                <div
-                    id="auth-register-form"
-                    class="auth-page-form">
+                            <p class="field-note" data-i18n="genderOptionalNote">A nemed megadása opcionális.</p>
 
-                    <div class="auth-inputs">
+                            <div class="privacy-consent-row">
+                                <label class="privacy-checkbox-label">
+                                    <input type="checkbox" id="auth-register-privacy">
+                                    <span data-i18n="privacyCheckboxLabel">Elolvastam és tudomásul vettem az adatvédelmi tájékoztatót.</span>
+                                </label>
+                                <button type="button" id="auth-register-privacy-link" class="privacy-link-btn" data-i18n="privacyCheckboxLink">Adatvédelmi tájékoztató megtekintése</button>
+                            </div>
 
-                        <input
-                            type="text"
-                            id="auth-register-username"
-                            placeholder="Felhasználónév"
-                            maxlength="20"
-                            autocomplete="username">
-
-                        <input
-                            type="password"
-                            id="auth-register-password"
-                            placeholder="Jelszó (min. 8 karakter)"
-                            maxlength="128"
-                            autocomplete="new-password">
-
-                        <input
-                            type="password"
-                            id="auth-register-password-confirm"
-                            placeholder="Jelszó még egyszer"
-                            maxlength="128"
-                            autocomplete="new-password">
-
-                        <div class="gender-selection">
-
-                            <label class="gender-btn">
-
-                                <input
-                                    type="radio"
-                                    name="auth-gender"
-                                    value="girl">
-
-                                <span data-i18n="girl">
-                                    Lány
-                                </span>
-
-                            </label>
-
-                            <label class="gender-btn">
-
-                                <input
-                                    type="radio"
-                                    name="auth-gender"
-                                    value="boy">
-
-                                <span data-i18n="boy">
-                                    Fiú
-                                </span>
-
-                            </label>
-
-                            <label class="gender-btn">
-
-                                <input
-                                    type="radio"
-                                    name="auth-gender"
-                                    value=""
-                                    checked>
-
-                                <span data-i18n="genderNone">
-                                    Nem adom meg
-                                </span>
-
-                            </label>
-
+                            <p id="auth-register-error" class="error-text" role="alert"></p>
                         </div>
 
-                        <p
-                            class="field-note"
-                            data-i18n="genderOptionalNote">
-                            A nemed megadása opcionális.
-                        </p>
-
-                        <div class="privacy-consent-row">
-
-                            <label class="privacy-checkbox-label">
-
-                                <input
-                                    type="checkbox"
-                                    id="auth-register-privacy">
-
-                                <span data-i18n="privacyCheckboxLabel">
-                                    Elolvastam és tudomásul vettem az adatvédelmi tájékoztatót.
-                                </span>
-
-                            </label>
-
-                            <button
-                                type="button"
-                                id="auth-register-privacy-link"
-                                class="privacy-link-btn"
-                                data-i18n="privacyCheckboxLink">
-                                Adatvédelmi tájékoztató megtekintése
-                            </button>
-
-                        </div>
-
-                        <p
-                            id="auth-register-error"
-                            class="error-text"
-                            role="alert">
-                        </p>
-
+                        <button id="auth-register-submit" class="primary-btn auth-submit-btn" type="button" data-i18n="register">REGISZTRÁCIÓ</button>
                     </div>
-
-                    <button
-                        id="auth-register-submit"
-                        class="primary-btn auth-submit-btn"
-                        type="button"
-                        data-i18n="register">
-                        REGISZTRÁCIÓ
-                    </button>
-
-                </div>
 
                 </div>
 

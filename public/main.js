@@ -1,3 +1,4 @@
+
 import { appState } from "./core/state.js";
 
 import {
@@ -416,6 +417,129 @@ if (soundToggle) {
 }
 
 
+function switchAuthMode(
+    mode
+) {
+    const authScreen =
+        document.getElementById(
+            "auth-screen"
+        );
+
+    const choiceView =
+        document.getElementById(
+            "auth-choice-view"
+        );
+
+    const formView =
+        document.getElementById(
+            "auth-form-view"
+        );
+
+    const loginForm =
+        document.getElementById(
+            "auth-login-form"
+        );
+
+    const registerForm =
+        document.getElementById(
+            "auth-register-form"
+        );
+
+    const formTitle =
+        document.getElementById(
+            "auth-form-title"
+        );
+
+    if (
+        !authScreen ||
+        !choiceView ||
+        !formView ||
+        !loginForm ||
+        !registerForm
+    ) {
+        return;
+    }
+
+    const isLogin =
+        mode === "login";
+
+    authScreen.classList.remove(
+        "auth-choice-mode",
+        "auth-form-mode",
+        "auth-register-mode"
+    );
+    authScreen.classList.add(
+        "auth-form-mode"
+    );
+
+    if (!isLogin) {
+        authScreen.classList.add(
+            "auth-register-mode"
+        );
+    }
+
+    choiceView.hidden = true;
+    formView.hidden = false;
+    loginForm.hidden = !isLogin;
+    registerForm.hidden = isLogin;
+
+    if (formTitle) {
+        formTitle.textContent =
+            isLogin
+                ? getTranslation(
+                      "login",
+                      "BEJELENTKEZÉS"
+                  )
+                : getTranslation(
+                      "register",
+                      "REGISZTRÁCIÓ"
+                  );
+    }
+
+    const loginTab =
+        document.getElementById(
+            "auth-login-tab"
+        );
+
+    const registerTab =
+        document.getElementById(
+            "auth-register-tab"
+        );
+
+    if (loginTab) {
+        loginTab.setAttribute(
+            "aria-selected",
+            String(isLogin)
+        );
+    }
+
+    if (registerTab) {
+        registerTab.setAttribute(
+            "aria-selected",
+            String(!isLogin)
+        );
+    }
+
+    const loginError =
+        document.getElementById(
+            "profile-auth-error"
+        );
+
+    const registerError =
+        document.getElementById(
+            "auth-register-error"
+        );
+
+    if (loginError) {
+        loginError.textContent = "";
+    }
+
+    if (registerError) {
+        registerError.textContent = "";
+    }
+}
+
+
 function showAuthChoice() {
     const authScreen =
         document.getElementById(
@@ -442,170 +566,32 @@ function showAuthChoice() {
             "auth-register-form"
         );
 
-    if (authScreen) {
-        authScreen.classList.remove(
-            "auth-form-mode",
-            "auth-register-mode"
-        );
-        authScreen.classList.add(
-            "auth-choice-mode"
-        );
-    }
-
-    if (choiceView) {
-        choiceView.removeAttribute(
-            "style"
-        );
-    }
-
-    if (formView) {
-        formView.removeAttribute(
-            "style"
-        );
-    }
-
-    if (loginForm) {
-        loginForm.removeAttribute(
-            "style"
-        );
-    }
-
-    if (registerForm) {
-        registerForm.removeAttribute(
-            "style"
-        );
-    }
-}
-
-
-function switchAuthMode(
-    mode
-) {
-    const choiceView =
-        document.getElementById(
-            "auth-choice-view"
-        );
-
-    const formView =
-        document.getElementById(
-            "auth-form-view"
-        );
-
-    const backButton =
-        document.getElementById(
-            "auth-back-btn"
-        );
-
-    const loginForm =
-        document.getElementById(
-            "auth-login-form"
-        );
-
-    const registerForm =
-        document.getElementById(
-            "auth-register-form"
-        );
-
-    const title =
-        document.getElementById(
-            "auth-form-title"
-        );
-
-    if (
-        !formView ||
-        !loginForm ||
-        !registerForm
-    ) {
+    if (!authScreen || !choiceView || !formView) {
         return;
     }
 
-    const isLogin =
-        mode === "login";
-
-    const authScreen =
-        document.getElementById(
-            "auth-screen"
-        );
-
-    if (authScreen) {
-        authScreen.classList.remove(
-            "auth-choice-mode",
-            "auth-register-mode"
-        );
-        authScreen.classList.add(
-            "auth-form-mode"
-        );
-
-        if (!isLogin) {
-            authScreen.classList.add(
-                "auth-register-mode"
-            );
-        }
-    }
-
-    if (choiceView) {
-        choiceView.removeAttribute(
-            "style"
-        );
-    }
-
-    formView.removeAttribute(
-        "style"
+    authScreen.classList.remove(
+        "auth-form-mode",
+        "auth-register-mode"
+    );
+    authScreen.classList.add(
+        "auth-choice-mode"
     );
 
-    loginForm.removeAttribute(
-        "style"
-    );
+    choiceView.hidden = false;
+    formView.hidden = true;
 
-    registerForm.removeAttribute(
-        "style"
-    );
-
-    if (title) {
-        title.textContent =
-            isLogin
-                ? getTranslation(
-                      "login",
-                      "BEJELENTKEZÉS"
-                  )
-                : getTranslation(
-                      "register",
-                      "REGISZTRÁCIÓ"
-                  );
+    if (loginForm) {
+        loginForm.hidden = true;
     }
 
-    if (backButton) {
-        backButton.setAttribute(
-            "aria-label",
-            getTranslation(
-                "back",
-                "Vissza"
-            )
-        );
-    }
-
-    const loginError =
-        document.getElementById(
-            "profile-auth-error"
-        );
-
-    const registerError =
-        document.getElementById(
-            "auth-register-error"
-        );
-
-    if (loginError) {
-        loginError.textContent =
-            "";
-    }
-
-    if (registerError) {
-        registerError.textContent =
-            "";
+    if (registerForm) {
+        registerForm.hidden = true;
     }
 }
 
 
+switchAuthMode("login");
 showAuthChoice();
 
 
@@ -921,7 +907,6 @@ if (logoutBtn) {
                     await logoutUser();
 
                     resetGame();
-                    showAuthChoice();
                 }
             );
         }
@@ -1207,33 +1192,10 @@ document.addEventListener(
                     "auth-register-form"
                 );
 
-            const authScreen =
-                document.getElementById(
-                    "auth-screen"
-                );
-
-            const isFormMode =
-                authScreen &&
-                authScreen.classList.contains(
-                    "auth-form-mode"
-                );
-
-            const isLoginMode =
-                isFormMode &&
-                loginForm &&
-                window.getComputedStyle(
-                    loginForm
-                ).display !== "none";
-
-            const isRegisterMode =
-                isFormMode &&
-                registerForm &&
-                window.getComputedStyle(
-                    registerForm
-                ).display !== "none";
-
             if (
-                isLoginMode
+                loginForm &&
+                loginForm.style.display !==
+                    "none"
             ) {
                 const active =
                     document.activeElement;
@@ -1254,7 +1216,9 @@ document.addEventListener(
             }
 
             if (
-                isRegisterMode
+                registerForm &&
+                registerForm.style.display !==
+                    "none"
             ) {
                 const active =
                     document.activeElement;
