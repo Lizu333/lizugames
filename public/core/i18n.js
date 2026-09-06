@@ -3,6 +3,17 @@ import { appState } from "./state.js";
 
 const translations = {
     en: {
+        categoryNames: {
+            categoryArcade: "ARCADE",
+            categoryCards: "CARDS",
+            categoryMemory: "MEMORY",
+            categoryMisc: "MISC",
+            categoryNumber: "NUMBER",
+            categoryPuzzle: "PUZZLE",
+            categoryQuiz: "QUIZ",
+            categoryReflex: "REFLEX",
+            categoryVisual: "VISUAL",
+        },
         title: "Rock - Paper - Scissors",
         description: "Reach the target score first and be the winner!",
         siteTitle: "LizuGames",
@@ -305,6 +316,17 @@ const translations = {
     },
 
     hu: {
+        categoryNames: {
+            categoryArcade: "ARCADE",
+            categoryCards: "KÁRTYA",
+            categoryMemory: "MEMÓRIA",
+            categoryMisc: "MISC",
+            categoryNumber: "SZÁM",
+            categoryPuzzle: "PUZZLE",
+            categoryQuiz: "KVÍZ",
+            categoryReflex: "REFLEX",
+            categoryVisual: "VIZUÁLIS",
+        },
         title: "Kő - Papír - Olló",
         description: "Érd el elsőként a célpontszámot és nyerj!",
         siteTitle: "LizuGames",
