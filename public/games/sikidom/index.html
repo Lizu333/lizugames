@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Síkidom kalkulátor | LizuGames</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="page-decoration decoration-left">♡</div>
+    <div class="page-decoration decoration-right">♡</div>
+
+    <main class="calculator-wrapper">
+
+        <header class="header">
+
+            <button class="home-button" id="home-button" type="button">
+                ← LizuGames
+            </button>
+
+            <div class="title-decoration">♡</div>
+
+            <h1>Síkidom kalkulátor</h1>
+
+            <p class="subtitle">
+                Válaszd ki a síkidomot, majd add meg a szükséges adatokat.
+            </p>
+
+        </header>
+
+        <section id="main-menu" class="screen">
+
+            <h2>Mit szeretnél kiszámolni?</h2>
+
+            <div class="category-grid">
+
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="triangles"
+                >
+                    <div class="category-icon">△</div>
+
+                    <div class="category-title">
+                        Háromszögek
+                    </div>
+
+                    <div class="category-description">
+                        Szabályos, egyenlő szárú, derékszögű és általános háromszögek.
+                    </div>
+                </button>
+
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="quadrilaterals"
+                >
+                    <div class="category-icon">◇</div>
+
+                    <div class="category-title">
+                        Négyszögek
+                    </div>
+
+                    <div class="category-description">
+                        Négyzet, téglalap, rombusz, trapéz és további négyszögek.
+                    </div>
+                </button>
+
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="polygons"
+                >
+                    <div class="category-icon">⬡</div>
+
+                    <div class="category-title">
+                        Sokszögek
+                    </div>
+
+                    <div class="category-description">
+                        Szabályos ötszög, hatszög, nyolcszög, tízszög és tizenkétszög.
+                    </div>
+                </button>
+
+                <button
+                    class="category-card"
+                    type="button"
+                    data-category="curved"
+                >
+                    <div class="category-icon">○</div>
+
+                    <div class="category-title">
+                        Görbe síkidomok
+                    </div>
+
+                    <div class="category-description">
+                        Kör, ellipszis, körcikk, körszelet és körív.
+                    </div>
+                </button>
+
+            </div>
+
+        </section>
+
+        <section id="shape-menu" class="screen hidden">
+
+            <button
+                class="back-button"
+                id="back-button"
+                type="button"
+            >
+                ← Vissza
+            </button>
+
+            <h2 id="category-title"></h2>
+
+            <div id="shape-grid" class="shape-grid"></div>
+
+        </section>
+
+        <section id="calculator" class="screen hidden">
+
+            <button
+                class="back-button"
+                id="calculator-back"
+                type="button"
+            >
+                ← Vissza
+            </button>
+
+            <div class="selected-shape">
+
+                <div
+                    class="selected-icon"
+                    id="selected-icon"
+                ></div>
+
+                <h2 id="selected-title"></h2>
+
+                <p id="selected-description"></p>
+
+            </div>
+
+            <form id="calculator-form">
+
+                <input
+                    type="hidden"
+                    id="sikidom"
+                    name="sikidom"
+                >
+
+                <div
+                    id="input-container"
+                    class="input-container"
+                ></div>
+
+                <div class="form-group">
+
+                    <label for="mertekegyseg">
+                        Mértékegység
+                    </label>
+
+                    <select
+                        id="mertekegyseg"
+                        name="mertekegyseg"
+                    >
+                        <option value="mm²">mm²</option>
+                        <option value="cm²">cm²</option>
+                        <option value="dm²">dm²</option>
+                        <option value="m²">m²</option>
+                    </select>
+
+                </div>
+
+                <button
+                    class="calculate-button"
+                    type="submit"
+                >
+                    Számítás
+                </button>
+
+            </form>
+
+            <div
+                id="result"
+                class="result hidden"
+            ></div>
+
+            <div
+                id="error"
+                class="error hidden"
+            ></div>
+
+        </section>
+
+    </main>
+
+    <script src="sikidom.js"></script>
+
+</body>
+</html>
