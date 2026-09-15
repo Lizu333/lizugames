@@ -1,285 +1,41 @@
-<!DOCTYPE html><html lang="hu">
-
+<!DOCTYPE html>
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lizu&lt;3</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Lizu - Játékok, alkalmazások és hasznos projektek egy helyen.">
+    <title>Lizu</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-    <main class="game-container">
 
-        <section id="auth-screen" class="screen active">
-            <div class="auth-page-content">
+    <header class="site-navbar">
+        <div class="navbar-inner">
 
-                <div class="logo">
-                    <span class="logo-heart-text">♡</span>
-                </div>
+            <a href="./index.html" class="navbar-logo">
+                <span>Lizu</span>
+            </a>
 
-                <h1 class="games-title">
-                    <span data-i18n="playerProfile">
-                        JÁTÉKOS PROFIL
-                    </span>
-                </h1>
+            <nav class="navbar-links">
+                <a href="./index.html" class="navbar-link active">
+                    Főoldal
+                </a>
 
-                <p class="games-subtitle" data-i18n="authWelcome">
-                    Jelentkezz be a már meglévő profilodba, vagy regisztrálj a folytatáshoz.
-                </p>
+                <a href="./games/index.html" class="navbar-link">
+                    LizuGames
+                </a>
 
-                <div
-                    id="auth-choice-view"
-                    class="auth-choice-view">
+                <a href="./apps/index.html" class="navbar-link">
+                    Alkalmazások
+                </a>
 
-                    <p
-                        class="auth-choice-question">
-                        Mit szeretnél csinálni?
-                    </p>
+                <a href="./other/index.html" class="navbar-link">
+                    Egyéb
+                </a>
+            </nav>
 
-                    <div class="auth-choice-buttons">
-
-                        <button
-                            id="auth-login-tab"
-                            class="primary-btn auth-choice-btn"
-                            type="button"
-                            data-i18n="login">
-                            BEJELENTKEZÉS
-                        </button>
-
-                        <button
-                            id="auth-register-tab"
-                            class="secondary-btn auth-choice-btn"
-                            type="button"
-                            data-i18n="register">
-                            REGISZTRÁCIÓ
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <div
-                    id="auth-form-view"
-                    class="auth-form-view">
-
-                    <div class="auth-form-header">
-
-                        <button
-                            id="auth-back-btn"
-                            class="auth-back-btn"
-                            type="button"
-                            aria-label="Vissza"
-                            title="Vissza">
-
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                aria-hidden="true">
-                                <path d="M19 12H5" />
-                                <path d="M12 19l-7-7 7-7" />
-                            </svg>
-
-                        </button>
-
-                        <h2
-                            id="auth-form-title"
-                            class="auth-form-title">
-                            BEJELENTKEZÉS
-                        </h2>
-
-                    </div>
-
-                <div id="auth-login-form" class="auth-page-form">
-
-                    <div class="auth-inputs">
-
-                        <input
-                            type="text"
-                            id="auth-login-username"
-                            placeholder="Felhasználónév"
-                            maxlength="20"
-                            autocomplete="username">
-
-                        <input
-                            type="password"
-                            id="auth-login-password"
-                            placeholder="Jelszó"
-                            maxlength="128"
-                            autocomplete="current-password">
-
-                        <p
-                            id="profile-auth-error"
-                            class="error-text"
-                            role="alert">
-                        </p>
-
-                    </div>
-
-                    <button
-                        id="auth-login-submit"
-                        class="primary-btn auth-submit-btn"
-                        type="button"
-                        data-i18n="login">
-                        BEJELENTKEZÉS
-                    </button>
-
-                </div>
-
-                <div
-                    id="auth-register-form"
-                    class="auth-page-form">
-
-                    <div class="auth-inputs">
-
-                        <input
-                            type="text"
-                            id="auth-register-username"
-                            placeholder="Felhasználónév"
-                            maxlength="20"
-                            autocomplete="username">
-
-                        <input
-                            type="password"
-                            id="auth-register-password"
-                            placeholder="Jelszó (min. 8 karakter)"
-                            maxlength="128"
-                            autocomplete="new-password">
-
-                        <input
-                            type="password"
-                            id="auth-register-password-confirm"
-                            placeholder="Jelszó még egyszer"
-                            maxlength="128"
-                            autocomplete="new-password">
-
-                        <div class="gender-selection">
-
-                            <label class="gender-btn">
-
-                                <input
-                                    type="radio"
-                                    name="auth-gender"
-                                    value="girl">
-
-                                <span data-i18n="girl">
-                                    Lány
-                                </span>
-
-                            </label>
-
-                            <label class="gender-btn">
-
-                                <input
-                                    type="radio"
-                                    name="auth-gender"
-                                    value="boy">
-
-                                <span data-i18n="boy">
-                                    Fiú
-                                </span>
-
-                            </label>
-
-                            <label class="gender-btn">
-
-                                <input
-                                    type="radio"
-                                    name="auth-gender"
-                                    value=""
-                                    checked>
-
-                                <span data-i18n="genderNone">
-                                    Nem adom meg
-                                </span>
-
-                            </label>
-
-                        </div>
-
-                        <p
-                            class="field-note"
-                            data-i18n="genderOptionalNote">
-                            A nemed megadása opcionális.
-                        </p>
-
-                        <div class="privacy-consent-row">
-
-                            <label class="privacy-checkbox-label">
-
-                                <input
-                                    type="checkbox"
-                                    id="auth-register-privacy">
-
-                                <span data-i18n="privacyCheckboxLabel">
-                                    Elolvastam és tudomásul vettem az adatvédelmi tájékoztatót.
-                                </span>
-
-                            </label>
-
-                            <button
-                                type="button"
-                                id="auth-register-privacy-link"
-                                class="privacy-link-btn"
-                                data-i18n="privacyCheckboxLink">
-                                Adatvédelmi tájékoztató megtekintése
-                            </button>
-
-                        </div>
-
-                        <p
-                            id="auth-register-error"
-                            class="error-text"
-                            role="alert">
-                        </p>
-
-                    </div>
-
-                    <button
-                        id="auth-register-submit"
-                        class="primary-btn auth-submit-btn"
-                        type="button"
-                        data-i18n="register">
-                        REGISZTRÁCIÓ
-                    </button>
-
-                </div>
-
-                </div>
-
-            </div>
-        </section>
-
-        <section id="menu-screen" class="screen">
-
-            <div class="top-settings-bar">
-
-                <button
-                    id="profile-btn"
-                    class="icon-btn"
-                    title="Profil"
-                    aria-label="Profil">
-
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round">
-
-                        <circle cx="12" cy="8" r="5" />
-                        <path d="M20 21a8 8 0 0 0-16 0" />
-
-                    </svg>
-                </button>
+            <div class="navbar-actions">
 
                 <button
                     id="settings-btn"
@@ -312,7 +68,27 @@
                             a2.34 2.34 0 0 0 3.319-1.915" />
 
                         <circle cx="12" cy="12" r="3" />
+                    </svg>
+                </button>
 
+                <button
+                    id="profile-btn"
+                    class="icon-btn"
+                    title="Profil"
+                    aria-label="Profil">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+
+                        <circle cx="12" cy="8" r="5" />
+                        <path d="M20 21a8 8 0 0 0-16 0" />
                     </svg>
                 </button>
 
@@ -341,7 +117,6 @@
                             A6 6 0 0 1 16 16
                             c-3 0-5-2-8-2
                             a6 6 0 0 0-4 1.528" />
-
                     </svg>
                 </button>
 
@@ -373,485 +148,52 @@
 
                         <path d="M12 8v4" />
                         <path d="M12 16h.01" />
-
                     </svg>
                 </button>
 
             </div>
 
-            <div class="logo">
-                <span class="logo-heart-text">♡</span>
-            </div>
+            <button
+                class="hamburger-btn"
+                id="hamburger-btn"
+                aria-label="Menü"
+                aria-expanded="false">
 
-            <h1 class="games-title">
-                <span data-i18n="siteTitle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+
+            <nav class="mobile-nav-links">
+
+                <a href="./index.html" class="mobile-nav-link active">
+                    Főoldal
+                </a>
+
+                <a href="./games/index.html" class="mobile-nav-link">
                     LizuGames
-                </span>
-            </h1>
+                </a>
 
-            <p
-                class="games-subtitle"
-                data-i18n="selectGame">
-                Válassz egy játékot!
-            </p>
+                <a href="./apps/index.html" class="mobile-nav-link">
+                    Alkalmazások
+                </a>
 
-            <div class="game-categories">
+                <a href="./other/index.html" class="mobile-nav-link">
+                    Egyéb
+                </a>
 
-    <details class="game-category" open>
-        <summary>
-            <span class="category-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 3l2.2 4.45 4.92.72-3.56 3.47.84 4.9L12 14.2l-4.4 2.34.84-4.9-3.56-3.47 4.92-.72z"/>
-                </svg>
-            </span>
-            <span class="category-title-wrap", data-i18n="arcadeCategory">
-                <strong>ARCADE</strong>
-                <small>3 játék</small>
-            </span>
-            <span class="category-chevron">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6"/>
-                </svg>
-            </span>
-        </summary>
-        <div class="games-grid category-games">
-            <button id="rps-game-btn" class="game-card">
-                <div class="game-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M11.264 2.205A4 4 0 0 0 6.42 4.211l-4 8a4 4 0 0 0 1.359 5.117l6 4a4 4 0 0 0 4.438 0l6-4a4 4 0 0 0 1.576-4.592l-2-6a4 4 0 0 0-2.53-2.53z"/>
-                        <path d="M11.99 22 14 12l7.822 3.184"/>
-                        <path d="M14 12 8.47 2.302"/>
-                    </svg>
-                </div>
-                <div class="game-card-content">
-                    <h2 data-i18n="rpsTitle">Kő - Papír - Olló</h2>
-                    <p data-i18n="rpsDescription">Érd el elsőként a célpontszámot!</p>
-                </div>
-                <span class="game-card-arrow">→</span>
-            </button>
+            </nav>
 
-            <button class="game-card game-card-disabled" disabled aria-disabled="true">
-                <span class="game-card-coming-soon" data-i18n="comingSoon">HAMAROSAN</span>
-                <div class="game-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 5h14v14H5z"/>
-                        <path d="M8 8h8v8H8z"/>
-                        <path d="M9 3v2M15 3v2M9 19v2M15 19v2M3 9h2M3 15h2M19 9h2M19 15h2"/>
-                    </svg>
-                </div>
-                <div class="game-card-content">
-                    <h2>Snake</h2>
-                    <p>Gyűjtsd össze a pontokat, és maradj játékban!</p>
-                </div>
-                <span class="game-card-arrow">→</span>
-            </button>
-
-            <button id="tictactoe-game-btn" class="game-card">
-                <div class="game-card-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M8 2v20M16 2v20M2 8h20M2 16h20"/>
-                    </svg>
-                </div>
-                <div class="game-card-content">
-                    <h2 data-i18n="tictactoeTitle">Tic-Tac-Toe</h2>
-                    <p data-i18n="tictactoeDescription">3 a sorban.</p>
-                </div>
-                <span class="game-card-arrow">→</span>
-            </button>
-        </div>
-    </details>
-
-    <details class="game-category">
-        <summary>
-            <span class="category-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="5" width="18" height="14" rx="2"/>
-                    <path d="M7 9h.01M7 13h.01M10 11h.01M10 15h.01M14 10h4M14 14h4"/>
-                </svg>
-            </span>
-            <span class="category-title-wrap",data-i18n="cardsCategory"><strong>CARDS</strong><small>1 játék</small></span>
-            <span class="category-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
-        </summary>
-        <div class="games-grid category-games">
-            <button class="game-card game-card-disabled" disabled aria-disabled="true">
-                <span class="game-card-coming-soon">HAMAROSAN</span>
-                <div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h5M15 17h.01"/></svg></div>
-                <div class="game-card-content"><h2>Blackjack</h2><p>Érd el a 21-et, de ne lépd túl!</p></div>
-                <span class="game-card-arrow">→</span>
-            </button>
-        </div>
-    </details>
-
-    <details class="game-category">
-        <summary>
-            <span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="8" cy="7" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="10" cy="17" r="1.5"/></svg></span>
-            <span class="category-title-wrap" data-i18n="memoryCategory"><strong>MEMORY</strong><small>4 játék</small></span>
-            <span class="category-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
-        </summary>
-        <div class="games-grid category-games">
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h.01M12 8h.01M16 8h.01M8 12h.01M12 12h.01M16 12h.01"/></svg></div><div class="game-card-content"><h2>Pattern</h2><p>Jegyezd meg a mintát, majd ismételd meg!</p></div><span class="game-card-arrow">→</span></button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h4v4H5zM15 5h4v4h-4zM5 15h4v4H5zM15 15h4v4h-4z"/><path d="M11 7h2M11 17h2M7 11v2M17 11v2"/></svg></div><div class="game-card-content"><h2>Sequence</h2><p>Ismételd meg a felvillanó sorrendet!</p></div><span class="game-card-arrow">→</span></button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg></div><div class="game-card-content"><h2>Remember Grid</h2><p>Jegyezd meg, mely mezők voltak aktívak!</p></div><span class="game-card-arrow">→</span></button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><path d="m14 16 2 2 4-5"/></svg></div><div class="game-card-content"><h2>Which Changed?</h2><p>Találd meg, mi változott!</p></div><span class="game-card-arrow">→</span></button>
-        </div>
-    </details>
-
-    <details class="game-category">
-        <summary>
-            <span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v8M8 12h8"/></svg></span>
-            <span class="category-title-wrap" data-i18n="miscCategory"><strong>MISC</strong><small>2 játék</small></span>
-            <span class="category-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
-        </summary>
-        <div class="games-grid category-games">
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M12 8v8M8 12h8"/></svg></div><div class="game-card-content"><h2>Button Simulator</h2><p>Nyomd meg. Ennyi az egész.</p></div><span class="game-card-arrow">→</span></button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="18" cy="17" r="1.5"/><path d="M6 7l12 10"/></svg></div><div class="game-card-content"><h2>Count Them</h2><p>Számold meg gyorsan a megjelenő elemeket!</p></div><span class="game-card-arrow">→</span></button>
-        </div>
-    </details>
-
-    <details class="game-category">
-        <summary>
-            <span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v16H7z"/><path d="M10 8h4M10 12h4M10 16h2"/></svg></span>
-            <span class="category-title-wrap" data-i18n="numberCategory"><strong>NUMBER</strong><small>2 játék</small></span>
-            <span class="category-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
-        </summary>
-        <div class="games-grid category-games">
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div><div class="game-card-content"><h2>Number Hunt</h2><p>Találd meg a megfelelő számot!</p></div><span class="game-card-arrow">→</span></button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14v14H5z"/><path d="M8 8h.01M12 8h.01M16 8h.01M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/></svg></div><div class="game-card-content"><h2>Number Memory</h2><p>Jegyezd meg a számokat, ameddig csak tudod!</p></div><span class="game-card-arrow">→</span></button>
-        </div>
-    </details>
-
-    <details class="game-category">
-        <summary>
-            <span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m4 4 6 6M14 14l6 6M14 4l-4 4M10 16l-6 4M20 4l-6 6"/></svg></span>
-            <span class="category-title-wrap" data-i18n="puzzleCategory"><strong>PUZZLE</strong><small>4 játék</small></span>
-            <span class="category-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
-        </summary>
-        <div class="games-grid category-games">
-            <button id="2048-game-btn" class="game-card">
-                <div class="game-card-icon"><span class="game-2048-icon">2048</span></div>
-                <div class="game-card-content"><h2 data-i18n="game2048Title">2048</h2><p data-i18n="game2048Description">Rakd össze a 2048-as csempét!</p></div>
-                <span class="game-card-arrow">→</span>
-            </button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h6v6H5zM13 5h6v6h-6zM5 13h6v6H5zM13 13h6v6h-6z"/><path d="m9 9 6 6M15 9l-6 6"/></svg></div><div class="game-card-content"><h2>Lizu Blocks</h2><p>Építs, illessz és oldd meg a pályákat!</p></div><span class="game-card-arrow">→</span></button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/><circle cx="8" cy="7" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="10" cy="17" r="1.5"/></svg></div><div class="game-card-content"><h2>Sort It</h2><p>Rendezd a dolgokat a megfelelő helyre!</p></div><span class="game-card-arrow">→</span></button>
-            <button id="sudoku-game-btn" class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon" data-i18n="comingSoon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div><div class="game-card-content"><h2 data-i18n="sudokuTitle">Sudoku</h2><p data-i18n="sudokuDescription">A klasszikus Sudoku játék.</p></div><span class="game-card-arrow">→</span></button>
-        </div>
-    </details>
-
-    <details class="game-category">
-        <summary>
-            <span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6l2 4-5 14L7 7z"/><path d="M7 7h10"/></svg></span>
-            <span class="category-title-wrap" data-i18n="quizCategory"><strong>QUIZ</strong><small>3 játék</small></span>
-            <span class="category-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
-        </summary>
-        <div class="games-grid category-games">
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M8 10h.01M16 10h.01M9 15c2 1.5 4 1.5 6 0"/></svg></div><div class="game-card-content"><h2>Emoji Quiz</h2><p>Fejtsd meg az emojikból álló feladványokat!</p></div><span class="game-card-arrow">→</span></button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18v14H3z"/><path d="M3 9h18M7 5v14M17 5v14"/></svg></div><div class="game-card-content"><h2>Guess the Flag</h2><p>Ismerd fel, melyik országhoz tartozik a zászló!</p></div><span class="game-card-arrow">→</span></button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="m8 12 2.5 2.5L16 9"/></svg></div><div class="game-card-content"><h2>True or False</h2><p>Döntsd el gyorsan: igaz vagy hamis?</p></div><span class="game-card-arrow">→</span></button>
-        </div>
-    </details>
-
-    <details class="game-category">
-        <summary>
-            <span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8z"/></svg></span>
-            <span class="category-title-wrap" data-i18n="reflexCategory"><strong>REFLEX</strong><small>3 játék</small></span>
-            <span class="category-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
-        </summary>
-        <div class="games-grid category-games">
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div><div class="game-card-content"><h2>Color Reaction</h2><p>Reagálj a megfelelő színre minél gyorsabban!</p></div><span class="game-card-arrow">→</span></button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="5"/></svg></div><div class="game-card-content"><h2>Fastest Finger</h2><p>Ki tudsz a leggyorsabban reagálni?</p></div><span class="game-card-arrow">→</span></button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M12 8v8M8 12h8"/></svg></div><div class="game-card-content"><h2>Quick Click</h2><p>Kattints minél gyorsabban!</p></div><span class="game-card-arrow">→</span></button>
-        </div>
-    </details>
-
-    <details class="game-category">
-        <summary>
-            <span class="category-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></span>
-            <span class="category-title-wrap" data-i18n="visualCategory"><strong>VISUAL</strong><small>2 játék</small></span>
-            <span class="category-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
-        </summary>
-        <div class="games-grid category-games">
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></svg></div><div class="game-card-content"><h2>Color Difference</h2><p>Találd meg az egyetlen eltérő színt!</p></div><span class="game-card-arrow">→</span></button>
-            <button class="game-card game-card-disabled" disabled aria-disabled="true"><span class="game-card-coming-soon">HAMAROSAN</span><div class="game-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="m9 9 6 6M15 9l-6 6"/></svg></div><div class="game-card-content"><h2>Color Rush</h2><p>Válaszd ki a megfelelő színt a lehető leggyorsabban!</p></div><span class="game-card-arrow">→</span></button>
-        </div>
-    </details>
-
-</div>
-
-        </section>
-
-        <section id="game-screen" class="screen">
-
-            <header class="game-header">
-
-                <h1 data-i18n="title">
-                    Kő - Papír - Olló
-                </h1>
-
-                <div class="top-controls-container">
-
-                    <div class="target-score-selector">
-
-                        <span
-                            class="target-score-selector-label"
-                            data-i18n="targetScoreLabel">
-                            Cél:
-                        </span>
-
-                        <div class="target-score-buttons">
-
-                            <button
-                                class="target-score-btn"
-                                data-difficulty="3">
-                                3
-                            </button>
-
-                            <button
-                                class="target-score-btn"
-                                data-difficulty="5">
-                                5
-                            </button>
-
-                            <button
-                                class="target-score-btn"
-                                data-difficulty="10">
-                                10
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                    <div class="game-header-buttons">
-
-                        <button
-                            id="menu-game-btn"
-                            class="reset-btn"
-                            data-i18n="mainMenu">
-                            FŐMENÜ
-                        </button>
-
-                        <button
-                            id="reset-btn"
-                            class="reset-btn"
-                            data-i18n="reset">
-                            ÚJ JÁTÉK
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </header>
-
-            <div class="scoreboard">
-
-                <div class="score-box">
-
-                    <span
-                        class="score-label"
-                        data-i18n="you">
-                        JÁTÉKOS
-                    </span>
-
-                    <strong
-                        id="player-score"
-                        class="score-num">
-                        0
-                    </strong>
-
-                </div>
-
-                <div class="score-divider">
-                    —
-                </div>
-
-                <div class="score-box">
-
-                    <span
-                        class="score-label"
-                        data-i18n="opponent">
-                        ELLENFÉL
-                    </span>
-
-                    <strong
-                        id="computer-score"
-                        class="score-num">
-                        0
-                    </strong>
-
-                </div>
-
-            </div>
-
-            <div
-                id="target-score-info"
-                class="target-score-info">
-            </div>
-
-            <div class="battle">
-
-                <div class="player-card card">
-
-                    <span
-                        class="card-title"
-                        data-i18n="you">
-                        JÁTÉKOS
-                    </span>
-
-                    <div
-                        id="player-choice"
-                        class="choice-display">
-                        ?
-                    </div>
-
-                    <span
-                        id="player-choice-name"
-                        class="choice-name"
-                        data-i18n="waiting">
-                        Várakozás...
-                    </span>
-
-                </div>
-
-                <div class="vs">
-                    VS
-                </div>
-
-                <div class="computer-card card">
-
-                    <span
-                        class="card-title"
-                        data-i18n="opponent">
-                        ELLENFÉL
-                    </span>
-
-                    <div
-                        id="computer-choice"
-                        class="choice-display">
-                        ?
-                    </div>
-
-                    <span
-                        id="computer-choice-name"
-                        class="choice-name"
-                        data-i18n="waiting">
-                        Várakozás...
-                    </span>
-
-                </div>
-
-            </div>
-
-            <div
-                id="result"
-                class="result"
-                data-i18n="chooseWeapon">
-                Válassz fegyvert
-            </div>
-
-            <div id="round-status"></div>
-
-            <div class="choices">
+            <div class="mobile-actions">
 
                 <button
-                    class="choice-btn"
-                    data-choice="rock"
-                    aria-label="Kő">
-
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        width="28"
-                        height="28"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round">
-
-                        <path
-                            d="M11.264 2.205A4 4 0 0 0 6.42 4.211l-4 8
-                            a4 4 0 0 0 1.359 5.117l6 4
-                            a4 4 0 0 0 4.438 0l6-4
-                            a4 4 0 0 0 1.576-4.592l-2-6
-                            a4 4 0 0 0-2.53-2.53z" />
-
-                        <path d="M11.99 22 14 12l7.822 3.184" />
-                        <path d="M14 12 8.47 2.302" />
-
-                    </svg>
-
-                </button>
-
-                <button
-                    class="choice-btn"
-                    data-choice="paper"
-                    aria-label="Papír">
-
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        width="28"
-                        height="28"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round">
-
-                        <path d="M15 12h-5" />
-                        <path d="M15 8h-5" />
-                        <path d="M19 17V5a2 2 0 0 0-2-2H4" />
-
-                        <path
-                            d="M8 21h12a2 2 0 0 0 2-2v-1
-                            a1 1 0 0 0-1-1H11
-                            a1 1 0 0 0-1 1v1
-                            a2 2 0 1 1-4 0V5
-                            a2 2 0 1 0-4 0v2
-                            a1 1 0 0 0 1 1h3" />
-
-                    </svg>
-
-                </button>
-
-                <button
-                    class="choice-btn"
-                    data-choice="scissors"
-                    aria-label="Olló">
-
-                    <svg xmlns="http://www.w3.org/2000/svg"
-                        width="28"
-                        height="28"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round">
-
-                        <circle cx="6" cy="6" r="3" />
-                        <path d="M8.12 8.12 12 12" />
-                        <path d="M20 4 8.12 15.88" />
-                        <circle cx="6" cy="18" r="3" />
-                        <path d="M14.8 14.8 20 20" />
-
-                    </svg>
-
-                </button>
-
-            </div>
-
-        </section>
-
-        <section id="game-2048-screen" class="screen">
-
-            <header class="game-2048-header">
-
-                <button
-                    id="2048-menu-btn"
-                    class="icon-btn"
-                    title="Főmenü"
-                    aria-label="Főmenü">
+                    id="mobile-settings-btn"
+                    class="mobile-action-btn"
+                    type="button">
 
                     <svg xmlns="http://www.w3.org/2000/svg"
                         width="22"
@@ -863,1145 +205,290 @@
                         stroke-linecap="round"
                         stroke-linejoin="round">
 
-                        <path d="M15 18l-6-6 6-6" />
+                        <path
+                            d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0
+                            2.34 2.34 0 0 0 3.319 1.915
+                            2.34 2.34 0 0 1 2.33 4.033
+                            2.34 2.34 0 0 0 0 3.831
+                            2.34 2.34 0 0 1-2.33 4.033
+                            2.34 2.34 0 0 0-3.319 1.915
+                            2.34 2.34 0 0 1-4.659 0
+                            2.34 2.34 0 0 0-3.32-1.915
+                            2.34 2.34 0 0 1-2.33-4.033
+                            2.34 2.34 0 0 0 0-3.831
+                            A2.34 2.34 0 0 1 6.35 6.051
+                            a2.34 2.34 0 0 0 3.319-1.915" />
 
+                        <circle cx="12" cy="12" r="3" />
                     </svg>
 
+                    <span>Beállítások</span>
                 </button>
 
-                <h1>
-                    2048
-                </h1>
+                <button
+                    id="mobile-profile-btn"
+                    class="mobile-action-btn"
+                    type="button">
 
-                <div class="game-2048-score-container">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
 
-                    <div class="game-2048-score-box">
+                        <circle cx="12" cy="8" r="5" />
+                        <path d="M20 21a8 8 0 0 0-16 0" />
+                    </svg>
 
-                        <span data-i18n="score2048">
-                            PONTSZÁM
-                        </span>
+                    <span>Profil</span>
+                </button>
 
-                        <strong id="2048-score">
-                            0
-                        </strong>
+                <button
+                    id="mobile-report-btn"
+                    class="mobile-action-btn"
+                    type="button">
 
-                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
 
-                    <div class="game-2048-score-box">
+                        <path
+                            d="M4 22V4a1 1 0 0 1 .4-.8
+                            A6 6 0 0 1 8 2c3 0 5 2
+                            7.333 2q2 0 3.067-.8
+                            A1 1 0 0 1 20 4v10
+                            a1 1 0 0 1-.4.8
+                            A6 6 0 0 1 16 16
+                            c-3 0-5-2-8-2
+                            a6 6 0 0 0-4 1.528" />
+                    </svg>
 
-                        <span data-i18n="best2048">
-                            REKORD
-                        </span>
+                    <span>Hibabejelentés</span>
+                </button>
 
-                        <strong id="2048-best">
-                            0
-                        </strong>
+                <button
+                    id="mobile-privacy-btn"
+                    class="mobile-action-btn"
+                    type="button">
 
-                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
 
-                </div>
+                        <path
+                            d="M20 13c0 5-3.5 7.5-7.66 8.95
+                            a1 1 0 0 1-.67-.01
+                            C7.5 20.5 4 18 4 13V6
+                            a1 1 0 0 1 1-1
+                            c2 0 4.5-1.2 6.24-2.72
+                            a1.17 1.17 0 0 1 1.52 0
+                            C14.51 3.81 17 5 19 5
+                            a1 1 0 0 1 1 1z" />
 
-            </header>
+                        <path d="M12 8v4" />
+                        <path d="M12 16h.01" />
+                    </svg>
 
-            <div class="game-2048-intro">
-
-                <div>
-
-                    <h2 data-i18n="game2048Title">
-                        2048
-                    </h2>
-
-                    <p data-i18n="game2048Instructions">
-                        Kombináld az azonos számokat, és érd el a 2048-at!
-                    </p>
-
-                </div>
-
-                <div class="game-2048-actions">
-
-                    <button
-                        id="2048-undo-btn"
-                        class="secondary-btn"
-                        data-i18n="undo2048">
-                        VISSZAVONÁS
-                    </button>
-
-                    <button
-                        id="2048-new-game-btn"
-                        class="primary-btn"
-                        data-i18n="new2048Game">
-                        ÚJ JÁTÉK
-                    </button>
-
-                </div>
+                    <span>Adatvédelmi tájékoztató</span>
+                </button>
 
             </div>
+        </div>
+    </header>
 
-            <div
-                id="2048-board"
-                class="game-2048-board"
-                aria-label="2048 game board">
-            </div>
+    <main>
 
-            <p
-                id="2048-message"
-                class="game-2048-message"
-                data-i18n="game2048Ready">
-                Használd a nyilakat a számok mozgatásához!
-            </p>
+        <section class="hero-section" id="home">
 
-            <div
-                id="2048-overlay"
-                class="game-2048-overlay">
+            <div class="hero-decoration hero-decoration-one">♡</div>
+            <div class="hero-decoration hero-decoration-two">♡</div>
+            <div class="hero-decoration hero-decoration-three">♡</div>
 
-                <div class="game-2048-overlay-content">
+            <div class="hero-content">
 
-                    <h2 id="2048-overlay-title">
-                        2048
-                    </h2>
-
-                    <p id="2048-overlay-text">
-                        -
-                    </p>
-
-                    <button
-                        id="2048-overlay-new-game"
-                        class="primary-btn"
-                        data-i18n="new2048Game">
-                        ÚJ JÁTÉK
-                    </button>
-
-                    <button
-                        id="2048-overlay-menu"
-                        class="secondary-btn"
-                        data-i18n="mainMenu">
-                        FŐMENÜ
-                    </button>
-
+                <div class="hero-logo">
+                    <span>♡</span>
                 </div>
+
+                <p class="hero-small-title">
+                    ÜDVÖZÖLLEK AZ OLDALON!
+                </p>
+
+                <p class="hero-description">
+                    Itt megtalálod a saját fejlesztésű játékaimat, 
+                    <br>alkalmazásaimat és egyéb projektjeimet.
+                </p>
+
+                <a href="#projects" class="hero-button">
+                    <span>↓</span>
+                </a>
 
             </div>
 
         </section>
 
-        <section id="tictactoe-screen" class="screen">
+        <section class="projects-section" id="projects">
 
-            <header class="game-header">
+            <div class="section-heading">
 
-                <h1 data-i18n="tictactoeTitle">
-                    Tic-Tac-Toe
-                </h1>
-
-                <div class="top-controls-container">
-
-                    <div class="target-score-selector">
-
-                        <span
-                            class="target-score-selector-label"
-                            data-i18n="boardSizeLabel">
-                            Pálya:
-                        </span>
-
-                        <div class="target-score-buttons">
-
-                            <button
-                                id="tictactoe-3x3-btn"
-                                class="target-score-btn active">
-                                3 × 3
-                            </button>
-
-                            <button
-                                id="tictactoe-5x5-btn"
-                                class="target-score-btn">
-                                5 × 5
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                    <div class="game-header-buttons">
-
-                        <button
-                            id="tictactoe-menu-btn"
-                            class="reset-btn"
-                            data-i18n="mainMenu">
-                            FŐMENÜ
-                        </button>
-
-                        <button
-                            id="tictactoe-new-game-btn"
-                            class="reset-btn"
-                            data-i18n="reset">
-                            ÚJ JÁTÉK
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </header>
-
-            <div class="tictactoe-info">
-
-                <div class="tictactoe-player-info">
-
-                    <span
-                        class="card-title"
-                        data-i18n="you">
-                        JÁTÉKOS
-                    </span>
-
-                    <strong id="tictactoe-player-symbol">
-                        X
-                    </strong>
-
-                </div>
-
-                <div class="vs">
-                    VS
-                </div>
-
-                <div class="tictactoe-player-info">
-
-                    <span
-                        class="card-title"
-                        data-i18n="opponent">
-                        ELLENFÉL
-                    </span>
-
-                    <strong id="tictactoe-computer-symbol">
-                        O
-                    </strong>
-
-                </div>
-
-            </div>
-
-            <div
-                id="tictactoe-message"
-                class="result">
-                Te következel!
-            </div>
-
-            <div
-                id="tictactoe-board"
-                class="tictactoe-board"
-                aria-label="Tic-Tac-Toe játéktábla">
-            </div>
-
-        </section>
-
-        <section id="tictactoe-end-screen" class="screen">
-
-            <div class="end-icon">
-            </div>
-
-            <h1 id="tictactoe-end-title">
-                NYERTÉL!
-            </h1>
-
-            <p id="tictactoe-end-message">
-                Gratulálunk!
-            </p>
-
-            <div class="end-buttons">
-
-                <button
-                    id="tictactoe-new-game-end-btn"
-                    class="primary-btn"
-                    data-i18n="playAgain">
-                    ÚJ JÁTÉK
-                </button>
-
-                <button
-                    id="tictactoe-menu-end-btn"
-                    class="secondary-btn"
-                    data-i18n="mainMenu">
-                    FŐMENÜ
-                </button>
-
-            </div>
-
-        </section>
-
-        <section id="end-screen" class="screen">
-
-            <div
-                id="end-icon"
-                class="end-icon">
-            </div>
-
-            <h1 id="end-title">
-                NYERTÉL!
-            </h1>
-
-            <p id="end-message">
-                Gratulálunk!
-            </p>
-
-            <div class="final-score">
-
-                <span id="final-player-score">
-                    0
-                </span>
-
-                <strong>
-                    —
-                </strong>
-
-                <span id="final-computer-score">
-                    0
-                </span>
-
-            </div>
-
-            <div class="end-buttons">
-
-                <button
-                    id="play-again-btn"
-                    class="primary-btn"
-                    data-i18n="playAgain">
-                    ÚJ JÁTÉK
-                </button>
-
-                <button
-                    id="menu-btn"
-                    class="secondary-btn"
-                    data-i18n="mainMenu">
-                    FŐMENÜ
-                </button>
-
-            </div>
-
-        </section>
-
-        <div
-            id="profile-modal"
-            class="modal">
-
-            <div class="modal-content">
-
-                <button
-                    class="modal-close"
-                    data-close="profile-modal">
-                    ×
-                </button>
-
-                <h2 data-i18n="playerProfile">
-                    JÁTÉKOS PROFIL
+                <h2>
+                    Lizu
                 </h2>
 
-                <div id="profile-auth-forms">
+                <p>
+                    Válassz egy kategóriát
+                </p>
 
-                    <div class="auth-inputs">
+            </div>
 
-                        <input
-                            type="text"
-                            id="username-input"
-                            placeholder="Felhasználónév"
-                            maxlength="20"
-                            autocomplete="username">
+            <div class="platform-grid">
 
-                        <input
-                            type="password"
-                            id="password-input"
-                            placeholder="Jelszó (min. 8 karakter)"
-                            maxlength="128"
-                            autocomplete="current-password">
+                <a href="./games/index.html" class="platform-card">
 
-                        <div class="gender-selection">
+                    <div class="platform-card-icon">
+                        <svg viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
 
-                            <label class="gender-btn">
+                            <path d="M12 3l2.2 4.45 4.92.72-3.56 3.47.84 4.9L12 14.2l-4.4 2.34.84-4.9-3.56-3.47 4.92-.72z"/>
+                        </svg>
+                    </div>
 
-                                <input
-                                    type="radio"
-                                    name="gender"
-                                    value="girl">
+                    <div class="platform-card-content">
 
-                                <span data-i18n="girl">
-                                    Lány
-                                </span>
+                        <span class="platform-card-label">
+                            JÁTÉKOK
+                        </span>
 
-                            </label>
+                        <h3>
+                            LizuGames
+                        </h3>
 
-                            <label class="gender-btn">
-
-                                <input
-                                    type="radio"
-                                    name="gender"
-                                    value="boy">
-
-                                <span data-i18n="boy">
-                                    Fiú
-                                </span>
-
-                            </label>
-
-                            <label class="gender-btn">
-
-                                <input
-                                    type="radio"
-                                    name="gender"
-                                    value=""
-                                    checked>
-
-                                <span data-i18n="genderNone">
-                                    Nem adom meg
-                                </span>
-
-                            </label>
-
-                        </div>
-
-                        <p
-                            class="field-note"
-                            data-i18n="genderOptionalNote">
-                            A nemed megadása opcionális.
-                        </p>
-
-                        <div class="privacy-consent-row">
-
-                            <label class="privacy-checkbox-label">
-
-                                <input
-                                    type="checkbox"
-                                    id="privacy-checkbox">
-
-                                <span data-i18n="privacyCheckboxLabel">
-                                    Elolvastam és tudomásul veszem az adatvédelmi tájékoztatót.
-                                </span>
-
-                            </label>
-
-                            <button
-                                type="button"
-                                id="privacy-checkbox-link"
-                                class="privacy-link-btn"
-                                data-i18n="privacyCheckboxLink">
-                                Adatvédelmi tájékoztató megtekintése
-                            </button>
-
-                        </div>
-
-                        <p
-                            id="auth-error"
-                            class="error-text">
+                        <p>
+                            Böngéssz a játékok között.
+                            20 híres játék a saját verziómban.
                         </p>
 
                     </div>
 
-                    <div class="auth-buttons">
+                    <span class="platform-card-arrow">
+                        →
+                    </span>
 
-                        <button
-                            id="login-btn"
-                            class="primary-btn"
-                            data-i18n="login">
-                            BEJELENTKEZÉS
-                        </button>
+                </a>
 
-                        <button
-                            id="register-btn"
-                            class="secondary-btn"
-                            data-i18n="register">
-                            REGISZTRÁCIÓ
-                        </button>
+                <a href="./apps/index.html" class="platform-card">
 
-                    </div>
-
-                </div>
-
-
-                <div
-                    id="logged-in-view"
-                    style="display: none;">
-
-                    <div class="profile-header-info">
-
-                        <div>
-
-                            <span data-i18n="loggedInAs">
-                                Bejelentkezve:
-                            </span>
-
-                            <strong id="current-username">
-                            </strong>
-
-                        </div>
-
-                        <div class="join-date-row">
-
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                width="18"
-                                height="18"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="ui-icon-svg">
-
-                                <path d="M8 2v3" />
-                                <path d="M16 2v3" />
-
-                                <rect
-                                    x="3"
-                                    y="3"
-                                    width="18"
-                                    height="18"
-                                    rx="2" />
-
-                                <path d="M3 9h18" />
-
-                                <path d="M8 13h.01" />
-                                <path d="M12 13h.01" />
-                                <path d="M16 13h.01" />
-
-                                <path d="M8 17h.01" />
-                                <path d="M12 17h.01" />
-                                <path d="M16 17h.01" />
-
-                            </svg>
-
-                            <span data-i18n="joinedDate">
-                                Csatlakozott:
-                            </span>
-
-                            <span id="user-join-date">
-                                -
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        class="profile-game-switch"
-                        role="tablist">
-
-                        <button
-                            type="button"
-                            class="profile-game-tab active"
-                            data-profile-game="rps"
-                            data-i18n="rpsTitle"
-                            role="tab"
-                            aria-selected="true">
-                            Kő - Papír - Olló
-                        </button>
-
-                        <button
-                            type="button"
-                            class="profile-game-tab"
-                            data-profile-game="2048"
-                            data-i18n="game2048Title"
-                            role="tab"
-                            aria-selected="false">
-                            2048
-                        </button>
-
-                    </div>
-
-
-                    <div
-                        id="rps-stats-block"
-                        class="profile-stats-block active">
-
-                        <div class="statistics-grid">
-
-                            <div class="stat-card">
-
-                                <span data-i18n="gamesPlayed">
-                                    LEJÁTSZOTT
-                                </span>
-
-                                <strong id="games-played">
-                                    0
-                                </strong>
-
-                            </div>
-
-                            <div class="stat-card">
-
-                                <span data-i18n="wins">
-                                    GYŐZELEM
-                                </span>
-
-                                <strong id="total-wins">
-                                    0
-                                </strong>
-
-                            </div>
-
-                            <div class="stat-card">
-
-                                <span data-i18n="losses">
-                                    VERESÉG
-                                </span>
-
-                                <strong id="total-losses">
-                                    0
-                                </strong>
-
-                            </div>
-
-                            <div class="stat-card">
-
-                                <span data-i18n="draws">
-                                    DÖNTETLEN
-                                </span>
-
-                                <strong id="total-draws">
-                                    0
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="win-rate">
-
-                            <span data-i18n="winRate">
-                                GYŐZELMI ARÁNY
-                            </span>
-
-                            <strong id="win-rate">
-                                0%
-                            </strong>
-
-                        </div>
-
-
-                        <div class="choice-statistics">
-
-                            <h3 data-i18n="favoriteChoice">
-                                LEGTÖBBET HASZNÁLT
-                            </h3>
-
-                            <div class="choice-stat">
-
-                                <span data-i18n="rock">
-                                    KŐ
-                                </span>
-
-                                <strong id="rock-used">
-                                    0
-                                </strong>
-
-                            </div>
-
-                            <div class="choice-stat">
-
-                                <span data-i18n="paper">
-                                    PAPÍR
-                                </span>
-
-                                <strong id="paper-used">
-                                    0
-                                </strong>
-
-                            </div>
-
-                            <div class="choice-stat">
-
-                                <span data-i18n="scissors">
-                                    OLLÓ
-                                </span>
-
-                                <strong id="scissors-used">
-                                    0
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        id="game2048-stats-block"
-                        class="profile-stats-block">
-
-                        <div class="statistics-grid">
-
-                            <div class="stat-card">
-
-                                <span data-i18n="matches2048">
-                                    JÁTSZOTT MECCSEK
-                                </span>
-
-                                <strong id="matches-2048">
-                                    0
-                                </strong>
-
-                            </div>
-
-                            <div class="stat-card">
-
-                                <span data-i18n="bestScore2048Stat">
-                                    LEGJOBB PONTSZÁM
-                                </span>
-
-                                <strong id="best-score-2048">
-                                    0
-                                </strong>
-
-                            </div>
-
-                            <div class="stat-card">
-
-                                <span data-i18n="undosUsed2048">
-                                    HASZNÁLT VISSZAVONÁSOK
-                                </span>
-
-                                <strong id="undos-used-2048">
-                                    0
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="profile-actions">
-
-                        <button
-                            id="reset-statistics-btn"
-                            class="danger-btn"
-                            data-i18n="resetStatistics">
-                            STATISZTIKÁK TÖRLÉSE
-                        </button>
-
-                        <button
-                            id="logout-btn"
-                            class="danger-btn"
-                            data-i18n="logout">
-                            KIJELENTKEZÉS
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div
-            id="settings-modal"
-            class="modal">
-
-            <div class="modal-content">
-
-                <button
-                    class="modal-close"
-                    data-close="settings-modal">
-                    ×
-                </button>
-
-                <h2 data-i18n="settings">
-                    BEÁLLÍTÁSOK
-                </h2>
-
-                <div class="setting-row">
-
-                    <div>
-
-                        <span
-                            class="setting-title"
-                            data-i18n="language">
-                            NYELV
-                        </span>
-
-                    </div>
-
-                    <div class="setting-language">
-
-                        <button
-                            class="setting-lang-btn"
-                            data-setting-lang="hu">
-                            MAGYAR
-                        </button>
-
-                        <button
-                            class="setting-lang-btn"
-                            data-setting-lang="en">
-                            ENGLISH
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <div class="setting-row color-setting-row">
-
-                    <div>
-
-                        <span
-                            class="setting-title"
-                            data-i18n="theme">
-                            TÉMA
-                        </span>
-
-                    </div>
-
-                    <div class="theme-preset-options">
-
-                        <button
-                            class="theme-preset-btn"
-                            data-theme="cream-teal"
-                            style="--c1: #ffefb3; --c2: #013e37;"
-                            title="Cream & Teal">
-                        </button>
-
-                        <button
-                            class="theme-preset-btn"
-                            data-theme="wine-pink"
-                            style="--c1: #70020f; --c2: #ffdee2;"
-                            title="Wine & Pink">
-                        </button>
-
-                        <button
-                            class="theme-preset-btn"
-                            data-theme="olive-cream"
-                            style="--c1: #9ca764; --c2: #f1e8c7;"
-                            title="Olive & Cream">
-                        </button>
-
-                        <button
-                            class="theme-preset-btn"
-                            data-theme="pink-brown"
-                            style="--c1: #efcedb; --c2: #4f2b1f;"
-                            title="Pink & Brown">
-                        </button>
-
-                        <button
-                            class="theme-preset-btn"
-                            data-theme="blue-brown"
-                            style="--c1: #a0beda; --c2: #34211b;"
-                            title="Blue & Brown">
-                        </button>
-
-                        <button
-                            class="theme-preset-btn"
-                            data-theme="yellow-plum"
-                            style="--c1: #ffec8e; --c2: #631d3f;"
-                            title="Yellow & Plum">
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <div class="setting-row">
-
-                    <div>
-
-                        <span
-                            class="setting-title"
-                            data-i18n="sound">
-                            HANG
-                        </span>
-
-                    </div>
-
-                    <button
-                        id="sound-toggle"
-                        class="sound-toggle">
-
-                        <span id="sound-toggle-text">
-                            BE
-                        </span>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div
-            id="report-modal"
-            class="modal">
-
-            <div class="modal-content">
-
-                <button
-                    class="modal-close"
-                    data-close="report-modal">
-                    ×
-                </button>
-
-                <h2 data-i18n="reportTitle">
-                    HIBABEJELENTÉS
-                </h2>
-
-                <p
-                    class="description"
-                    data-i18n="reportDescription">
-                    Ha hibát tapasztaltál a játékban, írd meg nekünk!
-                </p>
-
-                <form
-                    action="https://formspree.io/f/xdenerve"
-                    method="POST"
-                    class="auth-inputs">
-
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="E-mail címed"
-                        required>
-
-                    <textarea
-                        name="message"
-                        placeholder="Hiba leírása..."
-                        rows="4"
-                        class="report-textarea"
-                        required></textarea>
-
-                    <button
-                        type="submit"
-                        class="primary-btn"
-                        data-i18n="send">
-                        KÜLDÉS
-                    </button>
-
-                </form>
-
-            </div>
-
-        </div>
-
-        <div
-            id="privacy-modal"
-            class="modal">
-
-            <div class="modal-content">
-
-                <button
-                    class="modal-close"
-                    data-close="privacy-modal">
-                    ×
-                </button>
-
-                <h2 data-i18n="privacyTitle">
-                    ADATVÉDELMI TÁJÉKOZTATÓ
-                </h2>
-
-                <div
-                    class="privacy-text"
-                    data-i18n-html="privacyText">
-                </div>
-
-                <button
-                    class="close-settings-btn secondary-btn"
-                    data-close="privacy-modal"
-                    data-i18n="close">
-                    BEZÁRÁS
-                </button>
-
-            </div>
-
-        </div>
-
-        <div
-            id="confirm-modal"
-            class="modal">
-
-            <div
-                class="modal-content confirm-modal-content">
-
-                <p
-                    id="confirm-message"
-                    class="confirm-message">
-                </p>
-
-                <div class="confirm-buttons">
-
-                    <button
-                        id="confirm-yes-btn"
-                        class="confirm-btn confirm-yes"
-                        aria-label="Igen">
-
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
+                    <div class="platform-card-icon">
+                        <svg viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
-                            stroke-width="2"
+                            stroke-width="1.8"
                             stroke-linecap="round"
                             stroke-linejoin="round">
 
-                            <path d="M20 6 9 17l-5-5" />
-
+                            <rect x="5" y="2" width="14" height="20" rx="3"/>
+                            <path d="M9 18h6"/>
+                            <path d="M9 5h6"/>
                         </svg>
+                    </div>
 
-                    </button>
+                    <div class="platform-card-content">
 
-                    <button
-                        id="confirm-no-btn"
-                        class="confirm-btn confirm-no"
-                        aria-label="Nem">
+                        <span class="platform-card-label">
+                            WINDOWS / ANDROID
+                        </span>
 
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
+                        <h3>
+                            Alkalmazások
+                        </h3>
+
+                        <p>
+                            Lizu által készített Windows és Android
+                            alkalmazások egy helyen.
+                        </p>
+
+                    </div>
+
+                    <span class="platform-card-arrow">
+                        →
+                    </span>
+
+                </a>
+
+                <a href="./other/index.html" class="platform-card">
+
+                    <div class="platform-card-icon">
+                        <svg viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
-                            stroke-width="2"
+                            stroke-width="1.8"
                             stroke-linecap="round"
                             stroke-linejoin="round">
 
-                            <path d="M18 6 6 18" />
-                            <path d="m6 6 12 12" />
-
+                            <path d="M12 3l2.2 4.45 4.92.72-3.56 3.47.84 4.9L12 14.2l-4.4 2.34.84-4.9-3.56-3.47 4.92-.72z"/>
+                            <path d="M19 16l1 2"/>
+                            <path d="M5 16l-1 2"/>
                         </svg>
+                    </div>
 
-                    </button>
+                    <div class="platform-card-content">
 
-                </div>
-
-            </div>
-
-        </div>
-
-        <div
-            id="creator-modal"
-            class="modal">
-
-            <div
-                class="modal-content creator-modal-content">
-
-                <button
-                    class="modal-close"
-                    data-close="creator-modal">
-                    ×
-                </button>
-
-                <div class="creator-info">
-
-                    <a
-                        href="https://github.com/Lizu333"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="github-link">
-
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            fill="currentColor"
-                            viewBox="0 0 16 16">
-
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8
-                                c0 3.54 2.29 6.53
-                                5.47 7.59
-                                .4.07.55-.17.55-.38
-                                0-.19-.01-.82-.01-1.49
-                                -2.01.37-2.53-.49-2.69-.94
-                                -.09-.23-.48-.94-.82-1.13
-                                -.28-.15-.68-.52-.01-.53
-                                .63-.01 1.08.58 1.23.82
-                                .72 1.21 1.87.87 2.33.66
-                                .07-.52.28-.87.51-1.07
-                                -1.78-.2-3.64-.89-3.64-3.95
-                                0-.87.31-1.59.82-2.15
-                                -.08-.2-.36-1.02.08-2.12
-                                0 0 .67-.21 2.2.82
-                                .64-.18 1.32-.27 2-.27
-                                s1.36.09 2 .27
-                                c1.53-1.04 2.2-.82 2.2-.82
-                                .44 1.1.16 1.92.08 2.12
-                                .51.56.82 1.27.82 2.15
-                                0 3.07-1.87 3.75-3.65 3.95
-                                .29.25.54.73.54 1.48
-                                0 1.07-.01 1.93-.01 2.2
-                                0 .21.15.46.55.38
-                                A8.01 8.01 0 0 0 16 8
-                                c0-4.42-3.58-8-8-8" />
-
-                        </svg>
-
-                        <span>
-                            GitHub
+                        <span class="platform-card-label">
+                            PROJEKTEK
                         </span>
 
-                    </a>
+                        <h3>
+                            Egyéb
+                        </h3>
 
-                    <p class="copyright-text">
-                        © Lilla Kecskes 2026
-                    </p>
+                        <p>
+                            Hasznos kis alkalmazások, kísérleti projektek
+                            és egyéb Lizu projektek.
+                        </p>
 
-                </div>
+                    </div>
+
+                    <span class="platform-card-arrow">
+                        →
+                    </span>
+
+                </a>
 
             </div>
 
-        </div>
+        </section>
 
     </main>
 
-    <div class="creator-tab-container">
+    <footer class="site-footer">
 
-        <button
-            id="creator-modal-btn"
-            class="creator-tab-btn"
-            title="More about the creator"
-            aria-label="More about the creator">
+        <p>
+            © 2026 Lilla Kecskes
+        </p>
 
-            <svg xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round">
+    </footer>
 
-                <path
-                    d="M11.017 2.814a1 1 0 0 1 1.966 0
-                    l1.051 5.558a2 2 0 0 0 1.594 1.594
-                    l5.558 1.051a1 1 0 0 1 0 1.966
-                    l-5.558 1.051a2 2 0 0 0-1.594 1.594
-                    l-1.051 5.558a1 1 0 0 1-1.966 0
-                    l-1.051-5.558a2 2 0 0 0-1.594-1.594
-                    l-5.558-1.051a1 1 0 0 1 0-1.966
-                    l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
-
-                <path d="M20 2v4" />
-                <path d="M22 4h-4" />
-                <circle cx="4" cy="20" r="2" />
-
-            </svg>
-
-            <span
-                class="hover-text"
-                data-i18n="moreAboutCreator">
-                More about the creator
-            </span>
-
-        </button>
-
-    </div>
-
-
-    <script
-        type="module"
-        src="main.js">
-    </script>
+    <script type="module" src="./main.js"></script>
 
 </body>
-
 </html>
-

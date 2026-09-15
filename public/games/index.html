@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LizuGames</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div id="loading-screen" class="page-state loading-state">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+            </div>
+
+            <div class="loading-title">
+                LizuGames
+            </div>
+
+            <div class="loading-text">
+                Betöltés...
+            </div>
+        </div>
+    </div>
+
+    <section id="auth-screen" class="page-state auth-state hidden">
+
+        <div class="auth-background"></div>
+
+        <nav class="site-navbar">
+            <div class="navbar-inner">
+
+                <a href="../index.html" class="navbar-logo">
+                    <strong>Lizu</strong>
+                </a>
+
+                <nav class="navbar-links">
+                    <a href="../index.html">
+                        Főoldal
+                    </a>
+
+                    <a href="./index.html" class="active">
+                        LizuGames
+                    </a>
+
+                    <a href="../apps/index.html">
+                        Alkalmazások
+                    </a>
+
+                    <a href="../other/index.html">
+                        Egyéb
+                    </a>
+                </nav>
+
+                <button
+                    id="hamburger-btn"
+                    class="hamburger-btn"
+                    type="button"
+                    aria-label="Menü"
+                    aria-expanded="false">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+            <div
+                id="mobile-menu"
+                class="mobile-menu"
+                aria-hidden="true">
+
+                <a href="../index.html">
+                    Főoldal
+                </a>
+
+                <a href="./index.html" class="active">
+                    LizuGames
+                </a>
+
+                <a href="../apps/index.html">
+                    Alkalmazások
+                </a>
+
+                <a href="../other/index.html">
+                    Egyéb
+                </a>
+
+            </div>
+        </nav>
+
+        <main class="auth-container">
+
+            <span class="eyebrow">
+                LIZUGAMES
+            </span>
+
+            <h1>
+                Belépés a játékvilágba
+            </h1>
+
+            <p class="auth-description">
+                A játékok használatához jelentkezz be, vagy hozz létre egy LizuGames fiókot.
+            </p>
+
+            <div class="auth-card">
+
+                <div class="auth-tabs">
+
+                    <button
+                        id="login-tab"
+                        class="auth-tab active"
+                        type="button">
+                        BEJELENTKEZÉS
+                    </button>
+
+                    <button
+                        id="register-tab"
+                        class="auth-tab"
+                        type="button">
+                        REGISZTRÁCIÓ
+                    </button>
+
+                </div>
+
+                <form id="login-form" class="auth-form">
+
+                    <label for="login-username">
+                        Felhasználónév
+                    </label>
+
+                    <input
+                        id="login-username"
+                        type="text"
+                        maxlength="20"
+                        autocomplete="username"
+                        required>
+
+                    <label for="login-password">
+                        Jelszó
+                    </label>
+
+                    <input
+                        id="login-password"
+                        type="password"
+                        maxlength="128"
+                        autocomplete="current-password"
+                        required>
+
+                    <p
+                        id="login-error"
+                        class="auth-error"
+                        role="alert">
+                    </p>
+
+                    <button
+                        id="login-submit"
+                        class="primary-button"
+                        type="submit">
+                        BELÉPÉS
+                    </button>
+
+                </form>
+
+                <form
+                    id="register-form"
+                    class="auth-form hidden">
+
+                    <label for="register-username">
+                        Felhasználónév
+                    </label>
+
+                    <input
+                        id="register-username"
+                        type="text"
+                        maxlength="20"
+                        autocomplete="username"
+                        required>
+
+                    <label for="register-password">
+                        Jelszó
+                    </label>
+
+                    <input
+                        id="register-password"
+                        type="password"
+                        maxlength="128"
+                        autocomplete="new-password"
+                        required>
+
+                    <label for="register-password-confirm">
+                        Jelszó újra
+                    </label>
+
+                    <input
+                        id="register-password-confirm"
+                        type="password"
+                        maxlength="128"
+                        autocomplete="new-password"
+                        required>
+
+                    <div class="gender-selection">
+
+                        <label class="gender-option">
+                            <input
+                                type="radio"
+                                name="register-gender"
+                                value="girl">
+
+                            <span>
+                                Lány
+                            </span>
+                        </label>
+
+                        <label class="gender-option">
+                            <input
+                                type="radio"
+                                name="register-gender"
+                                value="boy">
+
+                            <span>
+                                Fiú
+                            </span>
+                        </label>
+
+                    </div>
+
+                    <label class="privacy-check">
+
+                        <input
+                            id="register-privacy"
+                            type="checkbox"
+                            required>
+
+                        <span>
+                            Elfogadom az adatvédelmi tájékoztatót.
+                        </span>
+
+                    </label>
+
+                    <p class="privacy-note">
+                        Az adatvédelmi tájékoztató a főoldal adatvédelmi részében érhető el.
+                    </p>
+
+                    <p
+                        id="register-error"
+                        class="auth-error"
+                        role="alert">
+                    </p>
+
+                    <button
+                        id="register-submit"
+                        class="primary-button"
+                        type="submit">
+                        REGISZTRÁCIÓ
+                    </button>
+
+                </form>
+
+            </div>
+
+        </main>
+
+    </section>
+
+    <section id="portal-screen" class="page-state portal-state hidden">
+
+        <nav class="site-navbar">
+
+            <div class="navbar-inner">
+
+                <a href="../index.html" class="navbar-logo">
+                    <strong>Lizu</strong>
+                </a>
+
+                <nav class="navbar-links">
+
+                    <a href="../index.html">
+                        Főoldal
+                    </a>
+
+                    <a href="./index.html" class="active">
+                        LizuGames
+                    </a>
+
+                    <a href="../apps/index.html">
+                        Alkalmazások
+                    </a>
+
+                    <a href="../other/index.html">
+                        Egyéb
+                    </a>
+
+                </nav>
+
+                <div class="navbar-actions">
+
+                    <button
+                        id="site-settings-button"
+                        class="icon-btn"
+                        type="button"
+                        aria-label="Oldal beállításai"
+                        title="Oldal beállításai">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+
+                            <path d="M9.67 4.14a2.34 2.34 0 0 1 4.66 0 2.34 2.34 0 0 0 3.32 1.91 2.34 2.34 0 0 1 2.33 4.03 2.34 2.34 0 0 0 0 3.84 2.34 2.34 0 0 1-2.33 4.03 2.34 2.34 0 0 0-3.32 1.91 2.34 2.34 0 0 1-4.66 0 2.34 2.34 0 0 0-3.32-1.91 2.34 2.34 0 0 1-2.33-4.03 2.34 2.34 0 0 0 0-3.84 2.34 2.34 0 0 1 2.33-4.03 2.34 2.34 0 0 0 3.32-1.91z"/>
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="3"/>
+
+                        </svg>
+
+                    </button>
+
+                    <button
+                        id="portal-profile-button"
+                        class="icon-btn"
+                        type="button"
+                        aria-label="Profil"
+                        title="Profil">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+
+                            <circle
+                                cx="12"
+                                cy="8"
+                                r="5"/>
+
+                            <path
+                                d="M20 21a8 8 0 0 0-16 0"/>
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+                <button
+                    id="portal-hamburger"
+                    class="hamburger-btn"
+                    type="button"
+                    aria-label="Menü"
+                    aria-expanded="false">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+            <div
+                id="portal-mobile-menu"
+                class="mobile-menu"
+                aria-hidden="true">
+
+                <a href="../index.html">
+                    Főoldal
+                </a>
+
+                <a href="./index.html" class="active">
+                    LizuGames
+                </a>
+
+                <a href="../apps/index.html">
+                    Alkalmazások
+                </a>
+
+                <a href="../other/index.html">
+                    Egyéb
+                </a>
+
+                <button
+                    id="mobile-site-settings"
+                    type="button">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true">
+
+                        <path d="M9.67 4.14a2.34 2.34 0 0 1 4.66 0 2.34 2.34 0 0 0 3.32 1.91 2.34 2.34 0 0 1 2.33 4.03 2.34 2.34 0 0 0 0 3.84 2.34 2.34 0 0 1-2.33 4.03 2.34 2.34 0 0 0-3.32 1.91 2.34 2.34 0 0 1-4.66 0 2.34 2.34 0 0 0-3.32-1.91 2.34 2.34 0 0 1-2.33-4.03 2.34 2.34 0 0 0 0-3.84 2.34 2.34 0 0 1 2.33-4.03 2.34 2.34 0 0 0 3.32-1.91z"/>
+
+                        <circle
+                            cx="12"
+                            cy="12"
+                            r="3"/>
+
+                    </svg>
+
+                    <span>
+                        Oldal beállításai
+                    </span>
+
+                </button>
+
+                <button
+                    id="mobile-portal-profile"
+                    type="button">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true">
+
+                        <circle
+                            cx="12"
+                            cy="8"
+                            r="5"/>
+
+                        <path
+                            d="M20 21a8 8 0 0 0-16 0"/>
+
+                    </svg>
+
+                    <span>
+                        Profil
+                    </span>
+
+                </button>
+
+            </div>
+
+        </nav>
+
+        <main class="portal-main">
+
+            <section class="portal-hero">
+
+                <h1>
+                    LizuGames
+                </h1>
+
+                <button
+                    id="game-mode-button"
+                    class="mode-button"
+                    type="button">
+                    ÁTVÁLTÁS JÁTÉKMODBA
+                </button>
+
+                <span class="scroll-hint">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true">
+
+                        <path d="m6 9 6 6 6-6"/>
+
+                    </svg>
+
+                </span>
+
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <strong>
+                Lilla Kecskes
+            </strong>
+        </footer>
+
+    </section>
+
+    <section
+        id="game-mode-screen"
+        class="page-state game-mode-state hidden">
+
+        <div class="game-mode-background"></div>
+
+        <button
+            id="exit-game-mode"
+            class="exit-game-mode"
+            type="button"
+            aria-label="Kilépés a Game Mode-ból"
+            title="Kilépés">
+
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true">
+
+                <path d="M19 12H5"/>
+                <path d="m11 18-6-6 6-6"/>
+
+            </svg>
+
+        </button>
+
+        <main class="game-mode-main">
+
+            <div class="game-mode-brand">
+                <strong>
+                    LizuGames
+                </strong>
+            </div>
+
+            <div
+                id="game-menu"
+                class="game-menu-panel">
+
+                <button
+                    class="game-menu-item primary"
+                    data-game-action="games"
+                    type="button">
+
+                    <span class="menu-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+
+                            <path d="M12 3l2.2 4.45 4.92.72-3.56 3.47.84 4.9L12 14.2l-4.4 2.34.84-4.9-3.56-3.47 4.92-.72z"/>
+
+                        </svg>
+
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            JÁTÉKOK
+                        </strong>
+
+                        <small>
+                            Válassz a Lizu játékaiból
+                        </small>
+
+                    </span>
+
+                    <span class="menu-arrow">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+
+                            <path d="M5 12h14"/>
+                            <path d="m13 6 6 6-6 6"/>
+
+                        </svg>
+
+                    </span>
+
+                </button>
+
+                <button
+                    class="game-menu-item"
+                    data-game-action="profile"
+                    type="button">
+
+                    <span class="menu-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+
+                            <circle
+                                cx="12"
+                                cy="8"
+                                r="5"/>
+
+                            <path
+                                d="M20 21a8 8 0 0 0-16 0"/>
+
+                        </svg>
+
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            PROFIL
+                        </strong>
+
+                        <small>
+                            Statisztikák és fiókadatok
+                        </small>
+
+                    </span>
+
+                    <span class="menu-arrow">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+
+                            <path d="M5 12h14"/>
+                            <path d="m13 6 6 6-6 6"/>
+
+                        </svg>
+
+                    </span>
+
+                </button>
+
+                <button
+                    class="game-menu-item"
+                    data-game-action="settings"
+                    type="button">
+
+                    <span class="menu-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+
+                            <path d="M9.67 4.14a2.34 2.34 0 0 1 4.66 0 2.34 2.34 0 0 0 3.32 1.91 2.34 2.34 0 0 1 2.33 4.03 2.34 2.34 0 0 0 0 3.84 2.34 2.34 0 0 1-2.33 4.03 2.34 2.34 0 0 0-3.32 1.91 2.34 2.34 0 0 1-4.66 0 2.34 2.34 0 0 0-3.32-1.91 2.34 2.34 0 0 1-2.33-4.03 2.34 2.34 0 0 0 0-3.84 2.34 2.34 0 0 1 2.33-4.03 2.34 2.34 0 0 0 3.32-1.91z"/>
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="3"/>
+
+                        </svg>
+
+                    </span>
+
+                    <span>
+
+                        <strong>
+                            BEÁLLÍTÁSOK
+                        </strong>
+
+                        <small>
+                            A Game Mode beállításai
+                        </small>
+
+                    </span>
+
+                    <span class="menu-arrow">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+
+                            <path d="M5 12h14"/>
+                            <path d="m13 6 6 6-6 6"/>
+
+                        </svg>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+            <div
+                id="games-panel"
+                class="game-subpanel hidden">
+
+                <button
+                    class="subpanel-back"
+                    data-back="menu"
+                    type="button">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true">
+
+                        <path d="M19 12H5"/>
+                        <path d="m11 18-6-6 6-6"/>
+
+                    </svg>
+
+                    VISSZA
+
+                </button>
+
+                <div class="subpanel-heading">
+
+                    <span>
+                        JÁTÉKOK
+                    </span>
+
+                    <h2>
+                        Válassz játékot
+                    </h2>
+
+                </div>
+
+                <div class="mode-games-grid">
+
+                    <a
+                        class="mode-game-card"
+                        href="../index.html?game=rps">
+
+                        <span class="mode-game-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true">
+
+                                <path d="M11.26 2.2A4 4 0 0 0 6.42 4.21l-4 8a4 4 0 0 0 1.36 5.12l6 4a4 4 0 0 0 4.44 0l6-4a4 4 0 0 0 1.58-4.59l-2-6a4 4 0 0 0-2.53-2.53z"/>
+                                <path d="M11.99 22 14 12l7.82 3.18"/>
+                                <path d="M14 12 8.47 2.3"/>
+
+                            </svg>
+
+                        </span>
+
+                        <span class="mode-game-info">
+
+                            <small>
+                                ARCADE
+                            </small>
+
+                            <strong>
+                                Kő - Papír - Olló
+                            </strong>
+
+                        </span>
+
+                        <span class="mode-game-arrow">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true">
+
+                                <path d="M5 12h14"/>
+                                <path d="m13 6 6 6-6 6"/>
+
+                            </svg>
+
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="mode-game-card"
+                        href="../index.html?game=tictactoe">
+
+                        <span class="mode-game-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true">
+
+                                <path d="M8 2v20"/>
+                                <path d="M16 2v20"/>
+                                <path d="M2 8h20"/>
+                                <path d="M2 16h20"/>
+
+                            </svg>
+
+                        </span>
+
+                        <span class="mode-game-info">
+
+                            <small>
+                                ARCADE
+                            </small>
+
+                            <strong>
+                                Tic-Tac-Toe
+                            </strong>
+
+                        </span>
+
+                        <span class="mode-game-arrow">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true">
+
+                                <path d="M5 12h14"/>
+                                <path d="m13 6 6 6-6 6"/>
+
+                            </svg>
+
+                        </span>
+
+                    </a>
+
+                    <a
+                        class="mode-game-card"
+                        href="../index.html?game=2048">
+
+                        <span class="mode-game-icon number">
+                            2048
+                        </span>
+
+                        <span class="mode-game-info">
+
+                            <small>
+                                PUZZLE
+                            </small>
+
+                            <strong>
+                                2048
+                            </strong>
+
+                        </span>
+
+                        <span class="mode-game-arrow">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true">
+
+                                <path d="M5 12h14"/>
+                                <path d="m13 6 6 6-6 6"/>
+
+                            </svg>
+
+                        </span>
+
+                    </a>
+
+                    <div class="mode-game-card disabled">
+
+                        <span class="mode-game-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true">
+
+                                <path d="M5 3v18"/>
+                                <path d="M19 3v18"/>
+                                <path d="M3 5h18"/>
+                                <path d="M3 19h18"/>
+                                <path d="M3 12h18"/>
+                                <path d="M12 3v18"/>
+
+                            </svg>
+
+                        </span>
+
+                        <span class="mode-game-info">
+
+                            <small>
+                                PUZZLE
+                            </small>
+
+                            <strong>
+                                Sudoku
+                            </strong>
+
+                        </span>
+
+                        <span class="coming-soon">
+                            HAMAROSAN
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div
+                id="profile-panel"
+                class="game-subpanel hidden">
+
+                <button
+                    class="subpanel-back"
+                    data-back="menu"
+                    type="button">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true">
+
+                        <path d="M19 12H5"/>
+                        <path d="m11 18-6-6 6-6"/>
+
+                    </svg>
+
+                    VISSZA
+
+                </button>
+
+                <div class="subpanel-heading">
+
+                    <span>
+                        PROFIL
+                    </span>
+
+                    <h2>
+                        Játékos profil
+                    </h2>
+
+                </div>
+
+                <div class="profile-summary">
+
+                    <div class="profile-avatar">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true">
+
+                            <circle
+                                cx="12"
+                                cy="8"
+                                r="5"/>
+
+                            <path
+                                d="M20 21a8 8 0 0 0-16 0"/>
+
+                        </svg>
+
+                    </div>
+
+                    <div>
+
+                        <strong id="profile-username">
+                            -
+                        </strong>
+
+                        <span id="profile-joined">
+                            Csatlakozott: -
+                        </span>
+
+                        <span id="profile-gender">
+                            -
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="statistics-heading">
+
+                    <span>
+                        STATISZTIKÁK
+                    </span>
+
+                </div>
+
+                <div class="statistics-grid">
+
+                    <article class="stat-card">
+
+                        <span>
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true">
+
+                                <path d="M11.26 2.2A4 4 0 0 0 6.42 4.21l-4 8a4 4 0 0 0 1.36 5.12l6 4a4 4 0 0 0 4.44 0l6-4a4 4 0 0 0 1.58-4.59l-2-6a4 4 0 0 0-2.53-2.53z"/>
+                                <path d="M11.99 22 14 12l7.82 3.18"/>
+                                <path d="M14 12 8.47 2.3"/>
+
+                            </svg>
+
+                        </span>
+
+                        <strong>
+                            Kő - Papír - Olló
+                        </strong>
+
+                        <div class="stat-row">
+                            <span>Játszmák</span>
+                            <b id="rps-matches">0</b>
+                        </div>
+
+                        <div class="stat-row">
+                            <span>Győzelmek</span>
+                            <b id="rps-wins">0</b>
+                        </div>
+
+                        <div class="stat-row">
+                            <span>Vereségek</span>
+                            <b id="rps-losses">0</b>
+                        </div>
+
+                        <div class="stat-row">
+                            <span>Döntetlen</span>
+                            <b id="rps-draws">0</b>
+                        </div>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <span class="number-stat">
+                            2048
+                        </span>
+
+                        <strong>
+                            2048
+                        </strong>
+
+                        <div class="stat-row">
+                            <span>Játszmák</span>
+                            <b id="2048-matches">0</b>
+                        </div>
+
+                        <div class="stat-row">
+                            <span>Legjobb pontszám</span>
+                            <b id="2048-score">0</b>
+                        </div>
+
+                        <div class="stat-row">
+                            <span>Visszavonások</span>
+                            <b id="2048-undos">0</b>
+                        </div>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <span>
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true">
+
+                                <path d="M8 2v20"/>
+                                <path d="M16 2v20"/>
+                                <path d="M2 8h20"/>
+                                <path d="M2 16h20"/>
+
+                            </svg>
+
+                        </span>
+
+                        <strong>
+                            Tic-Tac-Toe
+                        </strong>
+
+                        <div class="stat-row">
+                            <span>Statisztika</span>
+                            <b>Hamarosan</b>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+            <div
+                id="settings-panel"
+                class="game-subpanel hidden">
+
+                <button
+                    class="subpanel-back"
+                    data-back="menu"
+                    type="button">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true">
+
+                        <path d="M19 12H5"/>
+                        <path d="m11 18-6-6 6-6"/>
+
+                    </svg>
+
+                    VISSZA
+
+                </button>
+
+                <div class="subpanel-heading">
+
+                    <span>
+                        GAME MODE
+                    </span>
+
+                    <h2>
+                        Beállítások
+                    </h2>
+
+                </div>
+
+                <div class="settings-list">
+
+                    <div class="setting-row">
+
+                        <div>
+                            <strong>
+                                Téma
+                            </strong>
+
+                            <small>
+                                A Game Mode megjelenése
+                            </small>
+                        </div>
+
+                        <div class="setting-buttons">
+
+                            <button
+                                class="setting-choice active"
+                                data-game-theme="dark"
+                                type="button">
+                                SÖTÉT
+                            </button>
+
+                            <button
+                                class="setting-choice"
+                                data-game-theme="light"
+                                type="button">
+                                VILÁGOS
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div>
+                            <strong>
+                                Nyelv
+                            </strong>
+
+                            <small>
+                                A Game Mode nyelve
+                            </small>
+                        </div>
+
+                        <div class="setting-buttons">
+
+                            <button
+                                class="setting-choice active"
+                                data-game-language="hu"
+                                type="button">
+                                HU
+                            </button>
+
+                            <button
+                                class="setting-choice"
+                                data-game-language="en"
+                                type="button">
+                                EN
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="setting-row">
+
+                        <div>
+                            <strong>
+                                Hang
+                            </strong>
+
+                            <small>
+                                Játékmód hangjai
+                            </small>
+                        </div>
+
+                        <div class="setting-buttons">
+
+                            <button
+                                class="setting-choice active"
+                                data-game-sound="on"
+                                type="button">
+                                BE
+                            </button>
+
+                            <button
+                                class="setting-choice"
+                                data-game-sound="off"
+                                type="button">
+                                KI
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </section>
+
+    <div
+        id="exit-modal"
+        class="modal hidden">
+
+        <div class="modal-content">
+
+            <button
+                id="exit-modal-close"
+                class="modal-close"
+                type="button">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+
+                    <path d="m6 6 12 12"/>
+                    <path d="M18 6 6 18"/>
+
+                </svg>
+
+            </button>
+
+            <div class="modal-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+
+                    <path d="M19 12H5"/>
+                    <path d="m11 18-6-6 6-6"/>
+
+                </svg>
+
+            </div>
+
+            <h2>
+                Biztosan kilépsz?
+            </h2>
+
+            <p>
+                Visszatérsz a LizuGames főoldali nézetéhez.
+            </p>
+
+            <div class="modal-actions">
+
+                <button
+                    id="exit-cancel"
+                    class="secondary-button"
+                    type="button">
+                    MÉGSEM
+                </button>
+
+                <button
+                    id="exit-confirm"
+                    class="primary-button"
+                    type="button">
+                    KILÉPEK
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        id="site-settings-modal"
+        class="modal hidden">
+
+        <div class="modal-content">
+
+            <button
+                class="modal-close"
+                data-close-modal="site-settings-modal"
+                type="button">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+
+                    <path d="m6 6 12 12"/>
+                    <path d="M18 6 6 18"/>
+
+                </svg>
+
+            </button>
+
+            <div class="modal-icon">
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true">
+
+                    <path d="M9.67 4.14a2.34 2.34 0 0 1 4.66 0 2.34 2.34 0 0 0 3.32 1.91 2.34 2.34 0 0 1 2.33 4.03 2.34 2.34 0 0 0 0 3.84 2.34 2.34 0 0 1-2.33 4.03 2.34 2.34 0 0 0-3.32 1.91 2.34 2.34 0 0 1-4.66 0 2.34 2.34 0 0 0-3.32-1.91 2.34 2.34 0 0 1-2.33-4.03 2.34 2.34 0 0 0 0-3.84 2.34 2.34 0 0 1 2.33-4.03 2.34 2.34 0 0 0 3.32-1.91z"/>
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="3"/>
+
+                </svg>
+
+            </div>
+
+            <h2>
+                Oldal beállításai
+            </h2>
+
+            <p>
+                Ezek a beállítások kizárólag a LizuGames oldal megjelenésére vonatkoznak.
+            </p>
+
+            <div class="site-setting-list">
+
+                <div class="site-setting-row">
+
+                    <span>
+                        Színmód
+                    </span>
+
+                    <div>
+
+                        <button
+                            class="site-theme-choice active"
+                            data-site-theme="pink-brown"
+                            type="button">
+                            RÓZSASZÍN
+                        </button>
+
+                        <button
+                            class="site-theme-choice"
+                            data-site-theme="cream-teal"
+                            type="button">
+                            KRÉM
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="site-setting-row">
+
+                    <span>
+                        Nyelv
+                    </span>
+
+                    <div>
+
+                        <button
+                            class="site-language-choice active"
+                            data-site-language="hu"
+                            type="button">
+                            HU
+                        </button>
+
+                        <button
+                            class="site-language-choice"
+                            data-site-language="en"
+                            type="button">
+                            EN
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="./games.js"></script>
+
+</body>
+</html>

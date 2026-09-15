@@ -42,6 +42,108 @@ import {
 
 let pendingConfirmAction = null;
 
+function initSiteNavbar() {
+    const hamburgerButton = document.getElementById("hamburger-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (!hamburgerButton || !mobileMenu) {
+        return;
+    }
+
+    const setMenuState = open => {
+        hamburgerButton.setAttribute("aria-expanded", String(open));
+        mobileMenu.classList.toggle("active", open);
+        mobileMenu.setAttribute("aria-hidden", String(!open));
+        document.body.classList.toggle("mobile-menu-open", open);
+    };
+
+    hamburgerButton.addEventListener("click", event => {
+        event.stopPropagation();
+        const isOpen = mobileMenu.classList.contains("active");
+        setMenuState(!isOpen);
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => setMenuState(false));
+    });
+
+    document.addEventListener("click", event => {
+        if (!mobileMenu.classList.contains("active")) {
+            return;
+        }
+
+        if (!mobileMenu.contains(event.target) && !hamburgerButton.contains(event.target)) {
+            setMenuState(false);
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+            setMenuState(false);
+        }
+    });
+
+    const mobileActions = [
+        ["mobile-settings-btn", "settings-btn"],
+        ["mobile-profile-btn", "profile-btn"],
+        ["mobile-report-btn", "report-modal-btn"],
+        ["mobile-privacy-btn", "privacy-modal-btn"]
+    ];
+
+    mobileActions.forEach(([mobileId, desktopId]) => {
+        const mobileButton = document.getElementById(mobileId);
+        const desktopButton = document.getElementById(desktopId);
+
+        if (!mobileButton || !desktopButton) {
+            return;
+        }
+
+        mobileButton.addEventListener("click", () => {
+            setMenuState(false);
+            desktopButton.click();
+        });
+    });
+}
+
+function initSmoothNavigation() {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener("click", event => {
+            const targetId = link.getAttribute("href");
+
+            if (!targetId || targetId === "#") {
+                return;
+            }
+
+            const target = document.querySelector(targetId);
+
+            if (!target) {
+                return;
+            }
+
+            event.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            history.replaceState(null, "", targetId);
+        });
+    });
+}
+
+function initSiteNavbarState() {
+    const hamburgerButton = document.getElementById("hamburger-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (hamburgerButton) {
+        hamburgerButton.setAttribute("aria-expanded", "false");
+    }
+
+    if (mobileMenu) {
+        mobileMenu.setAttribute("aria-hidden", "true");
+    }
+}
+
+initSiteNavbarState();
+initSiteNavbar();
+initSmoothNavigation();
+
 
 function getTranslation(
     key,
@@ -1244,7 +1346,49 @@ document.addEventListener(
 );
 
 
-checkLogin();
+async function openRequestedGame() {
+    const requestedGame =
+        new URLSearchParams(window.location.search).get("game");
 
-//love y'all
+    if (!requestedGame) {
+        return;
+    }
 
+    const loggedIn = await checkLogin();
+
+    if (!loggedIn) {
+        return;
+    }
+
+    if (requestedGame === "rps") {
+        const button = document.getElementById("rps-game-btn");
+
+        if (button) {
+            button.click();
+        }
+    }
+
+    if (requestedGame === "tictactoe") {
+        const button = document.getElementById("tictactoe-game-btn");
+
+        if (button) {
+            button.click();
+        }
+    }
+
+    if (requestedGame === "2048") {
+        const button = document.getElementById("2048-game-btn");
+
+        if (button) {
+            button.click();
+        }
+    }
+
+    window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+    );
+}
+
+openRequestedGame();
